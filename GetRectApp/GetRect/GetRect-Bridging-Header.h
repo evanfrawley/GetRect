@@ -3,3 +3,5 @@
 //
 
 #import <Spotify/Spotify.h>
+
+#import "Firebase.h"

@@ -7,11 +7,40 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01167F631CF14FD20005BAA2 /* FirebaseAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01167F5B1CF14FD20005BAA2 /* FirebaseAnalytics.framework */; };
+		01167F641CF14FD20005BAA2 /* FirebaseAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01167F5B1CF14FD20005BAA2 /* FirebaseAnalytics.framework */; };
+		01167F651CF14FD20005BAA2 /* FirebaseAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01167F5B1CF14FD20005BAA2 /* FirebaseAnalytics.framework */; };
+		01167F661CF14FD20005BAA2 /* FirebaseInstanceID.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01167F5C1CF14FD20005BAA2 /* FirebaseInstanceID.framework */; };
+		01167F671CF14FD20005BAA2 /* FirebaseInstanceID.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01167F5C1CF14FD20005BAA2 /* FirebaseInstanceID.framework */; };
+		01167F681CF14FD20005BAA2 /* FirebaseInstanceID.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01167F5C1CF14FD20005BAA2 /* FirebaseInstanceID.framework */; };
+		01167F691CF14FD20005BAA2 /* GoogleInterchangeUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01167F5D1CF14FD20005BAA2 /* GoogleInterchangeUtilities.framework */; };
+		01167F6A1CF14FD20005BAA2 /* GoogleInterchangeUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01167F5D1CF14FD20005BAA2 /* GoogleInterchangeUtilities.framework */; };
+		01167F6B1CF14FD20005BAA2 /* GoogleInterchangeUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01167F5D1CF14FD20005BAA2 /* GoogleInterchangeUtilities.framework */; };
+		01167F6C1CF14FD20005BAA2 /* GoogleSymbolUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01167F5E1CF14FD20005BAA2 /* GoogleSymbolUtilities.framework */; };
+		01167F6D1CF14FD20005BAA2 /* GoogleSymbolUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01167F5E1CF14FD20005BAA2 /* GoogleSymbolUtilities.framework */; };
+		01167F6E1CF14FD20005BAA2 /* GoogleSymbolUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01167F5E1CF14FD20005BAA2 /* GoogleSymbolUtilities.framework */; };
+		01167F6F1CF14FD20005BAA2 /* GoogleUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01167F5F1CF14FD20005BAA2 /* GoogleUtilities.framework */; };
+		01167F701CF14FD20005BAA2 /* GoogleUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01167F5F1CF14FD20005BAA2 /* GoogleUtilities.framework */; };
+		01167F711CF14FD20005BAA2 /* GoogleUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01167F5F1CF14FD20005BAA2 /* GoogleUtilities.framework */; };
+		01167F721CF14FD20005BAA2 /* FirebaseDatabase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01167F601CF14FD20005BAA2 /* FirebaseDatabase.framework */; };
+		01167F731CF14FD20005BAA2 /* FirebaseDatabase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01167F601CF14FD20005BAA2 /* FirebaseDatabase.framework */; };
+		01167F741CF14FD20005BAA2 /* FirebaseDatabase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01167F601CF14FD20005BAA2 /* FirebaseDatabase.framework */; };
+		01167F751CF14FD20005BAA2 /* FirebaseAuth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01167F611CF14FD20005BAA2 /* FirebaseAuth.framework */; };
+		01167F761CF14FD20005BAA2 /* FirebaseAuth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01167F611CF14FD20005BAA2 /* FirebaseAuth.framework */; };
+		01167F771CF14FD20005BAA2 /* FirebaseAuth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01167F611CF14FD20005BAA2 /* FirebaseAuth.framework */; };
+		01167F781CF14FD20005BAA2 /* GoogleNetworkingUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01167F621CF14FD20005BAA2 /* GoogleNetworkingUtilities.framework */; };
+		01167F791CF14FD20005BAA2 /* GoogleNetworkingUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01167F621CF14FD20005BAA2 /* GoogleNetworkingUtilities.framework */; };
+		01167F7A1CF14FD20005BAA2 /* GoogleNetworkingUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01167F621CF14FD20005BAA2 /* GoogleNetworkingUtilities.framework */; };
+		01167F831CF151600005BAA2 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 01167F821CF151600005BAA2 /* libicucore.tbd */; };
+		01167F851CF152310005BAA2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01167F841CF152310005BAA2 /* GoogleService-Info.plist */; };
+		01167F861CF152310005BAA2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01167F841CF152310005BAA2 /* GoogleService-Info.plist */; };
+		01167F871CF152310005BAA2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01167F841CF152310005BAA2 /* GoogleService-Info.plist */; };
+		01BC59291CF14488004EA069 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BC59251CF14488004EA069 /* ViewController.swift */; };
+		01BC592A1CF14488004EA069 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BC59261CF14488004EA069 /* FeedViewController.swift */; };
+		01BC592B1CF14488004EA069 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BC59271CF14488004EA069 /* PostViewController.swift */; };
+		01BC592C1CF14488004EA069 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BC59281CF14488004EA069 /* SettingsViewController.swift */; };
+		01BC59501CF14709004EA069 /* DBTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BC594F1CF14709004EA069 /* DBTestViewController.swift */; };
 		209D61FE1CEF961600FDF372 /* Spotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 209D61FD1CEF961600FDF372 /* Spotify.framework */; };
-		209D62131CEFB94A00FDF372 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209D620F1CEFB94A00FDF372 /* FeedViewController.swift */; };
-		209D62141CEFB94A00FDF372 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209D62101CEFB94A00FDF372 /* PostViewController.swift */; };
-		209D62151CEFB94A00FDF372 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209D62111CEFB94A00FDF372 /* SettingsViewController.swift */; };
-		209D62161CEFB94A00FDF372 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209D62121CEFB94A00FDF372 /* ViewController.swift */; };
 		9D5DFDE41CE5655800972699 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5DFDE31CE5655800972699 /* AppDelegate.swift */; };
 		9D5DFDE91CE5655800972699 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D5DFDE71CE5655800972699 /* Main.storyboard */; };
 		9D5DFDEB1CE5655800972699 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D5DFDEA1CE5655800972699 /* Assets.xcassets */; };
@@ -39,12 +68,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01167F5B1CF14FD20005BAA2 /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseAnalytics.framework; sourceTree = "<group>"; };
+		01167F5C1CF14FD20005BAA2 /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseInstanceID.framework; sourceTree = "<group>"; };
+		01167F5D1CF14FD20005BAA2 /* GoogleInterchangeUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleInterchangeUtilities.framework; sourceTree = "<group>"; };
+		01167F5E1CF14FD20005BAA2 /* GoogleSymbolUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleSymbolUtilities.framework; sourceTree = "<group>"; };
+		01167F5F1CF14FD20005BAA2 /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleUtilities.framework; sourceTree = "<group>"; };
+		01167F601CF14FD20005BAA2 /* FirebaseDatabase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseDatabase.framework; sourceTree = "<group>"; };
+		01167F611CF14FD20005BAA2 /* FirebaseAuth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseAuth.framework; sourceTree = "<group>"; };
+		01167F621CF14FD20005BAA2 /* GoogleNetworkingUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleNetworkingUtilities.framework; sourceTree = "<group>"; };
+		01167F7B1CF14FF10005BAA2 /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		01167F811CF150D30005BAA2 /* Firebase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Firebase.h; sourceTree = "<group>"; };
+		01167F821CF151600005BAA2 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		01167F841CF152310005BAA2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		01BC59251CF14488004EA069 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		01BC59261CF14488004EA069 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		01BC59271CF14488004EA069 /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		01BC59281CF14488004EA069 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		01BC594F1CF14709004EA069 /* DBTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBTestViewController.swift; sourceTree = "<group>"; };
 		206E84B01CEF7AD600F6260D /* GetRect-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GetRect-Bridging-Header.h"; sourceTree = "<group>"; };
 		209D61FD1CEF961600FDF372 /* Spotify.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Spotify.framework; sourceTree = "<group>"; };
-		209D620F1CEFB94A00FDF372 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedViewController.swift; path = ../../../../.Trash/Controllers/FeedViewController.swift; sourceTree = "<group>"; };
-		209D62101CEFB94A00FDF372 /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostViewController.swift; path = ../../../../.Trash/Controllers/PostViewController.swift; sourceTree = "<group>"; };
-		209D62111CEFB94A00FDF372 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = ../../../../.Trash/Controllers/SettingsViewController.swift; sourceTree = "<group>"; };
-		209D62121CEFB94A00FDF372 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../../../../.Trash/Controllers/ViewController.swift; sourceTree = "<group>"; };
 		9D5DFDE01CE5655800972699 /* GetRect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GetRect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D5DFDE31CE5655800972699 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9D5DFDE81CE5655800972699 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -65,8 +107,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01167F831CF151600005BAA2 /* libicucore.tbd in Frameworks */,
+				01167F781CF14FD20005BAA2 /* GoogleNetworkingUtilities.framework in Frameworks */,
+				01167F751CF14FD20005BAA2 /* FirebaseAuth.framework in Frameworks */,
+				01167F6C1CF14FD20005BAA2 /* GoogleSymbolUtilities.framework in Frameworks */,
 				9D5DFE1A1CE5692800972699 /* AVFoundation.framework in Frameworks */,
 				209D61FE1CEF961600FDF372 /* Spotify.framework in Frameworks */,
+				01167F631CF14FD20005BAA2 /* FirebaseAnalytics.framework in Frameworks */,
+				01167F721CF14FD20005BAA2 /* FirebaseDatabase.framework in Frameworks */,
+				01167F661CF14FD20005BAA2 /* FirebaseInstanceID.framework in Frameworks */,
+				01167F691CF14FD20005BAA2 /* GoogleInterchangeUtilities.framework in Frameworks */,
+				01167F6F1CF14FD20005BAA2 /* GoogleUtilities.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +125,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01167F791CF14FD20005BAA2 /* GoogleNetworkingUtilities.framework in Frameworks */,
+				01167F731CF14FD20005BAA2 /* FirebaseDatabase.framework in Frameworks */,
+				01167F761CF14FD20005BAA2 /* FirebaseAuth.framework in Frameworks */,
+				01167F6A1CF14FD20005BAA2 /* GoogleInterchangeUtilities.framework in Frameworks */,
+				01167F641CF14FD20005BAA2 /* FirebaseAnalytics.framework in Frameworks */,
+				01167F6D1CF14FD20005BAA2 /* GoogleSymbolUtilities.framework in Frameworks */,
+				01167F701CF14FD20005BAA2 /* GoogleUtilities.framework in Frameworks */,
+				01167F671CF14FD20005BAA2 /* FirebaseInstanceID.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +140,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01167F7A1CF14FD20005BAA2 /* GoogleNetworkingUtilities.framework in Frameworks */,
+				01167F741CF14FD20005BAA2 /* FirebaseDatabase.framework in Frameworks */,
+				01167F771CF14FD20005BAA2 /* FirebaseAuth.framework in Frameworks */,
+				01167F6B1CF14FD20005BAA2 /* GoogleInterchangeUtilities.framework in Frameworks */,
+				01167F651CF14FD20005BAA2 /* FirebaseAnalytics.framework in Frameworks */,
+				01167F6E1CF14FD20005BAA2 /* GoogleSymbolUtilities.framework in Frameworks */,
+				01167F711CF14FD20005BAA2 /* GoogleUtilities.framework in Frameworks */,
+				01167F681CF14FD20005BAA2 /* FirebaseInstanceID.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,10 +157,11 @@
 		209D62171CEFB95500FDF372 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				209D620F1CEFB94A00FDF372 /* FeedViewController.swift */,
-				209D62101CEFB94A00FDF372 /* PostViewController.swift */,
-				209D62111CEFB94A00FDF372 /* SettingsViewController.swift */,
-				209D62121CEFB94A00FDF372 /* ViewController.swift */,
+				01BC59251CF14488004EA069 /* ViewController.swift */,
+				01BC59261CF14488004EA069 /* FeedViewController.swift */,
+				01BC59271CF14488004EA069 /* PostViewController.swift */,
+				01BC59281CF14488004EA069 /* SettingsViewController.swift */,
+				01BC594F1CF14709004EA069 /* DBTestViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -110,6 +178,7 @@
 		9D5DFDD71CE5655800972699 = {
 			isa = PBXGroup;
 			children = (
+				01167F821CF151600005BAA2 /* libicucore.tbd */,
 				9D5DFE191CE5692800972699 /* AVFoundation.framework */,
 				9D5DFDE21CE5655800972699 /* GetRect */,
 				9D5DFDF71CE5655800972699 /* GetRectTests */,
@@ -131,11 +200,22 @@
 		9D5DFDE21CE5655800972699 /* GetRect */ = {
 			isa = PBXGroup;
 			children = (
+				01167F811CF150D30005BAA2 /* Firebase.h */,
+				01167F7B1CF14FF10005BAA2 /* module.modulemap */,
+				01167F5B1CF14FD20005BAA2 /* FirebaseAnalytics.framework */,
+				01167F5C1CF14FD20005BAA2 /* FirebaseInstanceID.framework */,
+				01167F5D1CF14FD20005BAA2 /* GoogleInterchangeUtilities.framework */,
+				01167F5E1CF14FD20005BAA2 /* GoogleSymbolUtilities.framework */,
+				01167F5F1CF14FD20005BAA2 /* GoogleUtilities.framework */,
+				01167F601CF14FD20005BAA2 /* FirebaseDatabase.framework */,
+				01167F611CF14FD20005BAA2 /* FirebaseAuth.framework */,
+				01167F621CF14FD20005BAA2 /* GoogleNetworkingUtilities.framework */,
 				209D62181CEFB97200FDF372 /* Storyboards */,
 				209D62171CEFB95500FDF372 /* Controllers */,
 				209D61FD1CEF961600FDF372 /* Spotify.framework */,
 				9D5DFDE31CE5655800972699 /* AppDelegate.swift */,
 				9D5DFDEA1CE5655800972699 /* Assets.xcassets */,
+				01167F841CF152310005BAA2 /* GoogleService-Info.plist */,
 				9D5DFDEF1CE5655800972699 /* Info.plist */,
 				206E84B01CEF7AD600F6260D /* GetRect-Bridging-Header.h */,
 			);
@@ -265,6 +345,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D5DFDEE1CE5655800972699 /* LaunchScreen.storyboard in Resources */,
+				01167F851CF152310005BAA2 /* GoogleService-Info.plist in Resources */,
 				9D5DFDEB1CE5655800972699 /* Assets.xcassets in Resources */,
 				9D5DFDE91CE5655800972699 /* Main.storyboard in Resources */,
 			);
@@ -274,6 +355,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01167F861CF152310005BAA2 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +363,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01167F871CF152310005BAA2 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,11 +374,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				209D62141CEFB94A00FDF372 /* PostViewController.swift in Sources */,
-				209D62161CEFB94A00FDF372 /* ViewController.swift in Sources */,
+				01BC592B1CF14488004EA069 /* PostViewController.swift in Sources */,
+				01BC59291CF14488004EA069 /* ViewController.swift in Sources */,
+				01BC59501CF14709004EA069 /* DBTestViewController.swift in Sources */,
+				01BC592A1CF14488004EA069 /* FeedViewController.swift in Sources */,
+				01BC592C1CF14488004EA069 /* SettingsViewController.swift in Sources */,
 				9D5DFDE41CE5655800972699 /* AppDelegate.swift in Sources */,
-				209D62131CEFB94A00FDF372 /* FeedViewController.swift in Sources */,
-				209D62151CEFB94A00FDF372 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,6 +562,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/GetRect",
+				);
 				INFOPLIST_FILE = GetRectTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.uw.ischool.GetRectTests;
@@ -490,6 +578,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/GetRect",
+				);
 				INFOPLIST_FILE = GetRectTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.uw.ischool.GetRectTests;
@@ -502,6 +594,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/GetRect",
+				);
 				INFOPLIST_FILE = GetRectUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.uw.ischool.GetRectUITests;
@@ -516,6 +612,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/GetRect",
+				);
 				INFOPLIST_FILE = GetRectUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.uw.ischool.GetRectUITests;
