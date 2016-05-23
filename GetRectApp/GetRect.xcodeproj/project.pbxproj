@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2010303F1CF1A8BF00E25635 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2010303B1CF1A8BF00E25635 /* FeedViewController.swift */; };
+		201030401CF1A8BF00E25635 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2010303C1CF1A8BF00E25635 /* PostViewController.swift */; };
+		201030411CF1A8BF00E25635 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2010303D1CF1A8BF00E25635 /* SettingsViewController.swift */; };
+		201030421CF1A8BF00E25635 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2010303E1CF1A8BF00E25635 /* ViewController.swift */; };
+		201030931CF2E5A000E25635 /* FeedTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201030921CF2E5A000E25635 /* FeedTableView.swift */; };
+		201030961CF2E5F400E25635 /* FeedTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201030951CF2E5F400E25635 /* FeedTableCell.swift */; };
 		209D61FE1CEF961600FDF372 /* Spotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 209D61FD1CEF961600FDF372 /* Spotify.framework */; };
-		209D62131CEFB94A00FDF372 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209D620F1CEFB94A00FDF372 /* FeedViewController.swift */; };
-		209D62141CEFB94A00FDF372 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209D62101CEFB94A00FDF372 /* PostViewController.swift */; };
-		209D62151CEFB94A00FDF372 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209D62111CEFB94A00FDF372 /* SettingsViewController.swift */; };
-		209D62161CEFB94A00FDF372 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209D62121CEFB94A00FDF372 /* ViewController.swift */; };
 		9D5DFDE41CE5655800972699 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5DFDE31CE5655800972699 /* AppDelegate.swift */; };
 		9D5DFDE91CE5655800972699 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D5DFDE71CE5655800972699 /* Main.storyboard */; };
 		9D5DFDEB1CE5655800972699 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D5DFDEA1CE5655800972699 /* Assets.xcassets */; };
@@ -39,12 +41,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2010303B1CF1A8BF00E25635 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		2010303C1CF1A8BF00E25635 /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		2010303D1CF1A8BF00E25635 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		2010303E1CF1A8BF00E25635 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		201030921CF2E5A000E25635 /* FeedTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTableView.swift; sourceTree = "<group>"; };
+		201030951CF2E5F400E25635 /* FeedTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTableCell.swift; sourceTree = "<group>"; };
 		206E84B01CEF7AD600F6260D /* GetRect-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GetRect-Bridging-Header.h"; sourceTree = "<group>"; };
 		209D61FD1CEF961600FDF372 /* Spotify.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Spotify.framework; sourceTree = "<group>"; };
-		209D620F1CEFB94A00FDF372 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedViewController.swift; path = ../../../../.Trash/Controllers/FeedViewController.swift; sourceTree = "<group>"; };
-		209D62101CEFB94A00FDF372 /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostViewController.swift; path = ../../../../.Trash/Controllers/PostViewController.swift; sourceTree = "<group>"; };
-		209D62111CEFB94A00FDF372 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = ../../../../.Trash/Controllers/SettingsViewController.swift; sourceTree = "<group>"; };
-		209D62121CEFB94A00FDF372 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../../../../.Trash/Controllers/ViewController.swift; sourceTree = "<group>"; };
 		9D5DFDE01CE5655800972699 /* GetRect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GetRect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D5DFDE31CE5655800972699 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9D5DFDE81CE5655800972699 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -87,13 +91,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		201030941CF2E5AB00E25635 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				201030921CF2E5A000E25635 /* FeedTableView.swift */,
+				201030951CF2E5F400E25635 /* FeedTableCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		209D62171CEFB95500FDF372 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				209D620F1CEFB94A00FDF372 /* FeedViewController.swift */,
-				209D62101CEFB94A00FDF372 /* PostViewController.swift */,
-				209D62111CEFB94A00FDF372 /* SettingsViewController.swift */,
-				209D62121CEFB94A00FDF372 /* ViewController.swift */,
+				2010303B1CF1A8BF00E25635 /* FeedViewController.swift */,
+				2010303C1CF1A8BF00E25635 /* PostViewController.swift */,
+				2010303D1CF1A8BF00E25635 /* SettingsViewController.swift */,
+				2010303E1CF1A8BF00E25635 /* ViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -131,6 +144,7 @@
 		9D5DFDE21CE5655800972699 /* GetRect */ = {
 			isa = PBXGroup;
 			children = (
+				201030941CF2E5AB00E25635 /* Views */,
 				209D62181CEFB97200FDF372 /* Storyboards */,
 				209D62171CEFB95500FDF372 /* Controllers */,
 				209D61FD1CEF961600FDF372 /* Spotify.framework */,
@@ -228,6 +242,7 @@
 				TargetAttributes = {
 					9D5DFDDF1CE5655800972699 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = S4A2CDSF6D;
 					};
 					9D5DFDF31CE5655800972699 = {
 						CreatedOnToolsVersion = 7.3;
@@ -291,11 +306,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				209D62141CEFB94A00FDF372 /* PostViewController.swift in Sources */,
-				209D62161CEFB94A00FDF372 /* ViewController.swift in Sources */,
+				201030421CF1A8BF00E25635 /* ViewController.swift in Sources */,
+				201030931CF2E5A000E25635 /* FeedTableView.swift in Sources */,
+				201030961CF2E5F400E25635 /* FeedTableCell.swift in Sources */,
+				201030401CF1A8BF00E25635 /* PostViewController.swift in Sources */,
+				2010303F1CF1A8BF00E25635 /* FeedViewController.swift in Sources */,
 				9D5DFDE41CE5655800972699 /* AppDelegate.swift in Sources */,
-				209D62131CEFB94A00FDF372 /* FeedViewController.swift in Sources */,
-				209D62151CEFB94A00FDF372 /* SettingsViewController.swift in Sources */,
+				201030411CF1A8BF00E25635 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,6 +457,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -448,8 +467,9 @@
 				INFOPLIST_FILE = GetRect/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.uw.ischool.GetRect;
+				PRODUCT_BUNDLE_IDENTIFIER = me.evanfrawley.GetRect;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "GetRect/GetRect-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -460,6 +480,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -468,8 +490,9 @@
 				INFOPLIST_FILE = GetRect/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.uw.ischool.GetRect;
+				PRODUCT_BUNDLE_IDENTIFIER = me.evanfrawley.GetRect;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "GetRect/GetRect-Bridging-Header.h";
 			};
 			name = Release;

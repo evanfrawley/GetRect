@@ -1,4 +1,4 @@
-//
+			//
 //  AppDelegate.swift
 //  GetRect
 //
@@ -12,12 +12,43 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    let kClientID = "1a475789c4004e6584ad764a80430f52"
+    let kCallbackURL = "getrect://callback"
 
 
+    var session:SPTSession!
+    var player:SPTAudioStreamingController!
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         return true
     }
+    
+    func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool {
+        NSLog("button clicked 1")
+        if SPTAuth.defaultInstance().canHandleURL(url) {
+            NSLog("button clicked 2")
+            SPTAuth.defaultInstance().handleAuthCallbackWithTriggeredAuthURL(url, callback: { (error:NSError!, session:SPTSession!) in
+                if error != nil {
+                    print("authentication error")
+                    return
+                }
+                NSLog("button clicked 3")
+                
+                let userDefaults = NSUserDefaults.standardUserDefaults()
+                let sessionData = NSKeyedArchiver.archivedDataWithRootObject(session)
+                userDefaults.setObject(sessionData, forKey: "SpotifySession")
+                userDefaults.synchronize()
+                
+                NSNotificationCenter.defaultCenter().postNotificationName("successfulLogin", object: nil)
+                
+            })
+        } else {
+            print("can't handle url")
+        }
+        
+        return true
+    }
+    
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
