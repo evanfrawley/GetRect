@@ -1,0 +1,6 @@
+framework module Pods_GetRectTests {
+  umbrella header "Pods-GetRectTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
