@@ -7,12 +7,52 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class FeedViewController: UIViewController {
 
+    //things that I need to get from the spotify API
+    /* URI
+     * track name
+     * artist name
+     * img url
+     */
+    /*
+     example of a test call with Alamofire / SwiftJSON
+     let baseURL = "https://api.spotify.com/v1/tracks"
+     let params = ["ids": "0eGsygTp906u18L0Oimnem,37S0dTkF8GlXoZi7j4Sbzr"]
+     
+     let test = Alamofire.request(.GET, baseURL, parameters: params)
+     .responseJSON{ response in
+     
+     NSLog("this should do something")
+     let json = JSON(response.result.value!)
+     let testString = json["tracks", 0, "uri"].stringValue
+     NSLog(testString)
+     
+     }
+ 
+     */
+    
+
+    //use this formatting: http://stackoverflow.com/questions/26672547/swift-handling-json-with-alamofire-swiftyjson
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let baseURL = "https://api.spotify.com/v1/tracks"
+        let params = ["ids": "0eGsygTp906u18L0Oimnem,37S0dTkF8GlXoZi7j4Sbzr"]
 
+        let test = Alamofire.request(.GET, baseURL, parameters: params)
+            .responseJSON{ response in
+            
+            NSLog("this should do something")
+            let json = JSON(response.result.value!)
+            let testString = json["tracks", 0, "uri"].stringValue
+            NSLog(testString)
+                
+        }
+        
         // Do any additional setup after loading the view.
     }
 
