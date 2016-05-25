@@ -1,3 +1,11 @@
+---
+###Notes:
+*Pages:
+..*Login/Signup
+..*Feed
+
+---
+
 # GetRect 
 ### iOS/Swift INFO498 Final Spring 2016
 #### By: Wei-Jen Chiang, Evan Frawley, Nick Nordale
