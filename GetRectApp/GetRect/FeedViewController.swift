@@ -35,6 +35,8 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
      }
  
      */
+    
+    //placeholder for the inteded firebase JSON data
     var placeholder :JSON = [
         ["uri": "spotify:track:4Y8XcGssM81dwtlbjkqfm5",
             "user": "evanfrawley",
@@ -56,23 +58,24 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
             "fbid": "123123123123"]
     ]
     
-    
+    let api:SpotifyAPIHandler = SpotifyAPIHandler.init()
     
     var data:JSON = JSON([:])
 
 
     //use this formatting: http://stackoverflow.com/questions/26672547/swift-handling-json-with-alamofire-swiftyjson
     @IBOutlet weak var tableView: UITableView!
+    
+    //initializer viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.data = JSON([:])
         
         self.tableView.dataSource = self
         self.tableView.delegate = self
         
-        callSpotifyAPI(parseSpotifyID(self.placeholder)) { (responseObject) in
-            print(responseObject)
+        //makes call to start getting the spotify API data
+        api.callSpotifyAPI(api.parseSpotifyID(self.placeholder)) { (responseObject) in
+            self.data = responseObject
             self.tableView.reloadData()
             let test = self.data["tracks", 1, "name"].stringValue
             print("TEST!")
@@ -82,59 +85,40 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Do any additional setup after loading the view.
     }
 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    //initializes the tableview cells
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("FeedCell", forIndexPath: indexPath) as! FeedTableCell
         let post = self.data["tracks", indexPath.row]
+        
+        
         cell.title?.text = post["name"].stringValue
         cell.artist?.text = post["artists", 0, "name"].stringValue
-        let imgURL:NSURL = NSURL(string: post["album", "images", 0, "url"].stringValue)!
-        let imgData = NSData(contentsOfURL: imgURL)
-        //cell.art?.image = UIImage(data: imgData!)
+        cell.uri = post["uri"].stringValue
+        if post["album", "images", 0, "url"].stringValue != "" {
+            let imgURL:NSURL = NSURL(string: post["album", "images", 0, "url"].stringValue)!
+            let imgData:NSData? = NSData(contentsOfURL: imgURL)
+            cell.art?.image = UIImage(data: imgData!)
+        }
         return cell
     }
     
+    //required function
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return placeholder.count
     }
     
+    //required function
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
     
-    func parseSpotifyID(fbData:JSON) -> String {
-        
-        var combinedURI:String = ""
-        
-        for (_,subJson):(String, JSON) in fbData {
-            let trackURI:String = subJson["uri"].stringValue.componentsSeparatedByString(":")[2]
-            if combinedURI == "" {
-                combinedURI = trackURI
-            } else {
-                combinedURI += (",\(trackURI)")
-            }
-        }
-        
-        return combinedURI
-    }
-    
-    func callSpotifyAPI(params:String, completionHandler: (responseObject:JSON)->() ) {
-        makeCall(params, completionHandler: completionHandler)
-    }
-    
-    func makeCall(params:String, completionHandler: (responseObject: JSON) -> ()) {
-        let spotifyParams = ["ids":params]
-        Alamofire.request(.GET, "https://api.spotify.com/v1/tracks", parameters: spotifyParams)
-            .responseJSON { response in
-                self.data = JSON(response.result.value!)
-                completionHandler(responseObject: self.data)
-            }
-    }
 }
     
 
