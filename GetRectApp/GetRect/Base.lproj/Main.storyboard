@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Unknown constraint types" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -27,11 +28,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="OBJ-1R-tFT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="P7i-lg-mcA"/>
+                            <constraint firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="P7i-lg-mcA"/>
                             <constraint firstItem="iGq-n3-1bD" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Rdv-cP-tw5"/>
-                            <constraint firstItem="OBJ-1R-tFT" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="117" id="X0n-Eu-UvJ"/>
+                            <constraint firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="117" id="X0n-Eu-UvJ"/>
                             <constraint firstItem="iGq-n3-1bD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bPg-kr-dMp"/>
-                            <constraint firstItem="HIw-6f-nyg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vzi-ON-LHx"/>
+                            <constraint firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vzi-ON-LHx"/>
                         </constraints>
                     </view>
                     <connections>
@@ -68,7 +69,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="m0x-yb-YUm" id="EZD-PJ-5Bs">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="99"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Song Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UP9-3p-uD1">
