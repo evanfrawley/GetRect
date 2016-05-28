@@ -138,7 +138,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         return cell
         
     }
-    
+    	
     //required function
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return placeholder.count

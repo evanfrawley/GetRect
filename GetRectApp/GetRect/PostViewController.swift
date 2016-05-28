@@ -65,7 +65,7 @@ class PostViewController: UIViewController, UITableViewDelegate, UITableViewData
     //initializes the tableview cells
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("ResultCell", forIndexPath: indexPath) as! PostTableCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("PostCell", forIndexPath: indexPath) as! PostTableCell
         
         print(indexPath.row)
         
