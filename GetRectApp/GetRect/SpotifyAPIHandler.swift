@@ -15,16 +15,15 @@ class SpotifyAPIHandler {
         
     }
     
-    func callSearch( params:[String], completionHandler: (responseObject:JSON)->() ) {
-        ///reset params
-        
-        makeCall(params, completionHandler: completionHandler)
+    func callSearch(params:String, completionHandler: (responseObject:JSON)->() ) {
+        let newParams:String = params.stringByReplacingOccurrencesOfString(" ", withString: "%20")
+        let dict = ["q":newParams, "type":"track"]
+        makeCall("search", params: dict, completionHandler: completionHandler)
     }
     
-    func callTracks( params:[String], completionHandler: (responseObject:JSON)->() ) {
-        
-        //reset params
-        makeCall(params, completionHandler: completionHandler)
+    func callTracks( params:String, completionHandler: (responseObject:JSON)->() ) {
+        let dict = ["ids":params]
+        makeCall("tracks", params: dict, completionHandler: completionHandler)
     }
     
     func parseSpotifyID(fbData:JSON) -> String {
@@ -44,9 +43,12 @@ class SpotifyAPIHandler {
     //takes all of the URI and then calls the spotify API to get hte JSON response data
 
     //calls the spotify API and returns the response data in a reponse object of type JSON
-    func makeCall(params:[String], completionHandler: (responseObject: JSON) -> ()) {
-        let spotifyParams = ["ids":params]
-        Alamofire.request(.GET, "https://api.spotify.com/v1/tracks", parameters: spotifyParams)
+    func makeCall(searchType:String, params:NSDictionary, completionHandler: (responseObject: JSON) -> ()) {
+        let baseURL = "https://api.spotify.com/v1/"
+        let callURL = "\(baseURL)\(searchType)"
+        print(callURL)
+        
+        Alamofire.request(.GET, callURL, parameters: params as? [String : AnyObject])
             .responseJSON { response in
                 completionHandler(responseObject: JSON(response.result.value!))
         }

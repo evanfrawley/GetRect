@@ -38,25 +38,56 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     //placeholder for the inteded firebase JSON data
     var placeholder :JSON = [
-        ["uri": "spotify:track:4Y8XcGssM81dwtlbjkqfm5",
+            ["uri": "spotify:track:4Y8XcGssM81dwtlbjkqfm5",
             "user": "evanfrawley",
             "timestamp": "123/123/123",
             "score": 666,
             "geoloc": [47.6062,122.3321],
             "fbid": "123123123123"],
-        ["uri": "spotify:track:2G5nzWdblGm29nO1r7WxCU",
+            
+            ["uri": "spotify:track:2G5nzWdblGm29nO1r7WxCU",
             "user": "evanfrawley",
             "timestamp": "123/123/123",
             "score": 420,
             "geoloc": [47.6062,122.3321],
             "fbid": "123123123123"],
-        ["uri": "spotify:track:0Ix7doBgImhoWJfDnwezP1",
+            
+            ["uri": "spotify:track:0Ix7doBgImhoWJfDnwezP1",
             "user": "evanfrawley",
             "timestamp": "123/123/123",
             "score": 123,
             "geoloc": [47.6062,122.3321],
-            "fbid": "123123123123"]
-    ]
+                "fbid": "123123123123"],
+
+            
+            ["uri": "spotify:track:3UgSQu6WwrXfKKDq019IHE",
+                "user": "evanfrawley",
+                "timestamp": "123/123/123",
+                "score": 123,
+                "geoloc": [47.6062,122.3321],
+                "fbid": "123123123123"],
+            
+            ["uri": "spotify:track:48bSfSZaq9Aizbu4AWn4st",
+                "user": "evanfrawley",
+                "timestamp": "123/123/123",
+                "score": 123,
+                "geoloc": [47.6062,122.3321],
+                "fbid": "123123123123"],
+            
+            ["uri": "spotify:track:0P6RjFd2HgG2AXJadQuGfE",
+                "user": "evanfrawley",
+                "timestamp": "123/123/123",
+                "score": 123,
+                "geoloc": [47.6062,122.3321],
+                "fbid": "123123123123"],
+            
+            ["uri": "spotify:track:66hayvUbTotekKU3H4ta1f",
+                "user": "evanfrawley",
+                "timestamp": "123/123/123",
+                "score": 123,
+                "geoloc": [47.6062,122.3321],
+                "fbid": "123123123123"]
+            ]
     
     let api:SpotifyAPIHandler = SpotifyAPIHandler.init()
     
@@ -68,18 +99,16 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     //initializer viewDidLoad
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
         self.tableView.dataSource = self
         self.tableView.delegate = self
         
         //makes call to start getting the spotify API data
-        api.callSpotifyAPI(api.parseSpotifyID(self.placeholder)) { (responseObject) in
+        api.callTracks(api.parseSpotifyID(self.placeholder)) { (responseObject) in
             self.data = responseObject
             self.tableView.reloadData()
-            let test = self.data["tracks", 1, "name"].stringValue
-            print("TEST!")
-            print(test)
         }
         
         // Do any additional setup after loading the view.
@@ -107,6 +136,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
             cell.art?.image = UIImage(data: imgData!)
         }
         return cell
+        
     }
     
     //required function

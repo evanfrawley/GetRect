@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -17,18 +17,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iGq-n3-1bD">
-                                <rect key="frame" x="150" y="273" width="300" height="54"/>
-                                <state key="normal" image="login"/>
-                                <connections>
-                                    <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VEX-Ae-dCp"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OBJ-1R-tFT">
                                 <rect key="frame" x="250" y="137" width="101" height="30"/>
                                 <state key="normal" title="FeedView"/>
                                 <connections>
                                     <segue destination="aGW-ia-8Yd" kind="show" id="dz6-1C-YGV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HIw-6f-nyg">
+                                <rect key="frame" x="277" y="365" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="mxc-QW-pEs" kind="show" id="RuG-ud-1K6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iGq-n3-1bD">
+                                <rect key="frame" x="150" y="273" width="300" height="54"/>
+                                <state key="normal" image="login"/>
+                                <connections>
+                                    <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VEX-Ae-dCp"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -38,6 +45,7 @@
                             <constraint firstItem="iGq-n3-1bD" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Rdv-cP-tw5"/>
                             <constraint firstItem="OBJ-1R-tFT" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="117" id="X0n-Eu-UvJ"/>
                             <constraint firstItem="iGq-n3-1bD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bPg-kr-dMp"/>
+                            <constraint firstItem="HIw-6f-nyg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vzi-ON-LHx"/>
                         </constraints>
                     </view>
                     <connections>
@@ -128,8 +136,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="ZMg-Bq-GBj" id="dMp-0R-Olm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jv0-1u-ivJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="ZMg-Bq-GBj">
+                    <connections>
+                        <outlet property="delegate" destination="mxc-QW-pEs" id="XEK-dF-QEw"/>
+                        <outlet property="searchContentsController" destination="mxc-QW-pEs" id="5yD-OA-Gls"/>
+                        <outlet property="searchResultsDataSource" destination="mxc-QW-pEs" id="bCz-kY-BYD"/>
+                        <outlet property="searchResultsDelegate" destination="mxc-QW-pEs" id="gSU-Ng-Awr"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="1032" y="1135"/>
         </scene>
