@@ -24,7 +24,7 @@
                                     <segue destination="aGW-ia-8Yd" kind="show" id="dz6-1C-YGV"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HIw-6f-nyg>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HIw-6f-nyg">
                                 <rect key="frame" x="277" y="365" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
