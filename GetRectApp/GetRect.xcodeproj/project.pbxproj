@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+
 		013D63DA1CF0F16E00472FCA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 013D63D91CF0F16E00472FCA /* GoogleService-Info.plist */; };
 		0382EFA7A81C9D7200CDB05F /* Pods_GetRectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 949CEB91BE431943BE252EAC /* Pods_GetRectTests.framework */; };
 		2010303F1CF1A8BF00E25635 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2010303B1CF1A8BF00E25635 /* FeedViewController.swift */; };
