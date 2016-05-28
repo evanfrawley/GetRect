@@ -10,8 +10,10 @@ import UIKit
 import SwiftyJSON
 import Alamofire
 
-class PostViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class PostViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
 
+    
+    
     var placeholder :JSON = [
             ["uri": "spotify:track:4Y8XcGssM81dwtlbjkqfm5",
             "user": "evanfrawley",
@@ -36,17 +38,22 @@ class PostViewController: UIViewController, UITableViewDelegate, UITableViewData
 
             ]
     
-    let searchController = UISearchController(searchResultsController: nil)
-    
-    let tableView:UITableView = UITableView.init()
-    
-    
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
+    var api = SpotifyAPIHandler.init()
+    var data:JSON = JSON([:])
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        self.searchBar.delegate = self
         // Do any additional setup after loading the view.
+        self.searchBar.showsCancelButton = true
+        //self.searchBar.delegate = self.delegate
+        
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -60,12 +67,31 @@ class PostViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         let cell = tableView.dequeueReusableCellWithIdentifier("ResultCell", forIndexPath: indexPath) as! PostTableCell
         
+        print(indexPath.row)
+        
+        let post = self.data["tracks", "items", indexPath.row]
+        
+        
+        cell.title?.text = post["name"].stringValue
+        cell.artist?.text = post["artists", 0, "name"].stringValue
+        cell.uri = post["uri"].stringValue
+        print(cell.uri)
+        if post["album", "images", 0, "url"].stringValue != "" {
+            let imgURL:NSURL = NSURL(string: post["album", "images", 0, "url"].stringValue)!
+            let imgData:NSData? = NSData(contentsOfURL: imgURL)
+            cell.art?.image = UIImage(data: imgData!)
+        }
+        
+        
         return cell
     }
     
+    
+    
     //required function
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        print(data["tracks", "items"].count)
+        return data["tracks", "items"].count
     }
     
     //required function
@@ -73,7 +99,26 @@ class PostViewController: UIViewController, UITableViewDelegate, UITableViewData
         return 1
     }
     
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        
+        self.searchBar.resignFirstResponder()
+        self.searchBar.text = ""
+    }
     
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        
+        self.searchBar.resignFirstResponder()
+        let searchQuery = self.searchBar.text!
+        print(searchQuery)
+        api.callSearch(searchQuery) { (responseObject) in
+            self.data = responseObject
+            print(responseObject)
+            self.tableView.reloadData()
+        }
+        
+        
+    }
     
+
 
 }

@@ -9,6 +9,13 @@
 import UIKit
 
 class PostTableCell: UITableViewCell {
+    
+    
+    @IBOutlet weak var art: UIImageView!
+    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var artist: UILabel!
+    var uri:String = ""
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

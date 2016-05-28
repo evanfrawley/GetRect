@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -121,7 +122,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Ba-b9-iBZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1048" y="454"/>
+            <point key="canvasLocation" x="1049" y="353"/>
         </scene>
         <!--Post View Controller-->
         <scene sceneID="2df-Fl-ECT">
@@ -134,10 +135,62 @@
                     <view key="view" contentMode="scaleToFill" id="5Iz-1s-ezI">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="b8f-4h-EtR">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="i3A-0y-apA">
+                                <rect key="frame" x="20" y="64" width="560" height="407"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ResultCell" id="LHb-86-Nko" customClass="PostTableCell" customModule="GetRect" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="560" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LHb-86-Nko" id="sVq-l9-QPt">
+                                            <rect key="frame" x="0.0" y="0.0" width="560" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bZb-Ow-vZ0">
+                                                    <rect key="frame" x="0.0" y="0.0" width="43" height="43"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Artist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MNd-20-N2x">
+                                                    <rect key="frame" x="306" y="11" width="246" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O7e-WB-GAv">
+                                                    <rect key="frame" x="67" y="11" width="231" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="art" destination="bZb-Ow-vZ0" id="0Ot-60-8BH"/>
+                                            <outlet property="artist" destination="MNd-20-N2x" id="6Lc-VN-8rg"/>
+                                            <outlet property="title" destination="O7e-WB-GAv" id="hGx-QA-YJF"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="b8f-4h-EtR" firstAttribute="top" secondItem="QR7-KB-7QT" secondAttribute="bottom" id="6yI-Ns-Ap2"/>
+                            <constraint firstItem="i3A-0y-apA" firstAttribute="trailing" secondItem="5Iz-1s-ezI" secondAttribute="trailingMargin" id="K6r-0p-RfR"/>
+                            <constraint firstItem="i3A-0y-apA" firstAttribute="top" secondItem="b8f-4h-EtR" secondAttribute="bottom" id="Wg5-rD-VgJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="b8f-4h-EtR" secondAttribute="trailing" constant="-20" id="bVC-UM-5oe"/>
+                            <constraint firstItem="b8f-4h-EtR" firstAttribute="leading" secondItem="5Iz-1s-ezI" secondAttribute="leadingMargin" constant="-20" id="kcT-mZ-Yii"/>
+                            <constraint firstItem="i3A-0y-apA" firstAttribute="leading" secondItem="5Iz-1s-ezI" secondAttribute="leadingMargin" id="uRW-MV-jT0"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="searchBar" destination="b8f-4h-EtR" id="WaF-Nf-i1p"/>
                         <outlet property="searchDisplayController" destination="ZMg-Bq-GBj" id="dMp-0R-Olm"/>
+                        <outlet property="tableView" destination="i3A-0y-apA" id="Wlu-2n-e0v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jv0-1u-ivJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -150,7 +203,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1032" y="1135"/>
+            <point key="canvasLocation" x="1049" y="1209"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="wna-79-gM6">
@@ -176,7 +229,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="03S-rp-Xrd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="349" y="1135"/>
+            <point key="canvasLocation" x="319" y="1234"/>
         </scene>
     </scenes>
     <resources>
