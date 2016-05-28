@@ -22,12 +22,12 @@
 		43AAB4E57C3D698748E96A0F /* Pods_GetRect.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1550F9B89BCB1FC28FD79408 /* Pods_GetRect.framework */; };
 		9D5DFDE41CE5655800972699 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5DFDE31CE5655800972699 /* AppDelegate.swift */; };
 		9D5DFDE91CE5655800972699 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D5DFDE71CE5655800972699 /* Main.storyboard */; };
+		9D5DFDEB1CE5655800972699 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D5DFDEA1CE5655800972699 /* Assets.xcassets */; };
 		9D5DFDEE1CE5655800972699 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D5DFDEC1CE5655800972699 /* LaunchScreen.storyboard */; };
 		9D5DFDF91CE5655800972699 /* GetRectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5DFDF81CE5655800972699 /* GetRectTests.swift */; };
 		9D5DFE041CE5655800972699 /* GetRectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5DFE031CE5655800972699 /* GetRectUITests.swift */; };
 		9D5DFE1A1CE5692800972699 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D5DFE191CE5692800972699 /* AVFoundation.framework */; };
 		ECCAE690E638014C6CCC04A2 /* Pods_GetRectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6882B7665E869A7F96D21278 /* Pods_GetRectUITests.framework */; };
-		E20B9F5D1CF9573E00408E87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E20B9F5C1CF9573E00408E87 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +70,7 @@
 		9D5DFDE01CE5655800972699 /* GetRect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GetRect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D5DFDE31CE5655800972699 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9D5DFDE81CE5655800972699 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9D5DFDEA1CE5655800972699 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D5DFDED1CE5655800972699 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D5DFDEF1CE5655800972699 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D5DFDF41CE5655800972699 /* GetRectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GetRectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,7 +81,6 @@
 		9D5DFE051CE5655800972699 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D5DFE191CE5692800972699 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		F77E4E334911EBC85D3BFF40 /* Pods-GetRect.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GetRect.release.xcconfig"; path = "Pods/Target Support Files/Pods-GetRect/Pods-GetRect.release.xcconfig"; sourceTree = "<group>"; };
-		E20B9F5C1CF9573E00408E87 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../.Trash/Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,7 +167,6 @@
 		9D5DFDD71CE5655800972699 = {
 			isa = PBXGroup;
 			children = (
-				E20B9F5C1CF9573E00408E87 /* Assets.xcassets */,
 				9D5DFE191CE5692800972699 /* AVFoundation.framework */,
 				9D5DFDE21CE5655800972699 /* GetRect */,
 				9D5DFDF71CE5655800972699 /* GetRectTests */,
@@ -197,6 +196,7 @@
 				209D62171CEFB95500FDF372 /* Controllers */,
 				209D61FD1CEF961600FDF372 /* Spotify.framework */,
 				9D5DFDE31CE5655800972699 /* AppDelegate.swift */,
+				9D5DFDEA1CE5655800972699 /* Assets.xcassets */,
 				9D5DFDEF1CE5655800972699 /* Info.plist */,
 				206E84B01CEF7AD600F6260D /* GetRect-Bridging-Header.h */,
 				013D63D91CF0F16E00472FCA /* GoogleService-Info.plist */,
@@ -308,7 +308,7 @@
 				TargetAttributes = {
 					9D5DFDDF1CE5655800972699 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 5HDK7J6LY2;
+						DevelopmentTeam = S4A2CDSF6D;
 					};
 					9D5DFDF31CE5655800972699 = {
 						CreatedOnToolsVersion = 7.3;
@@ -347,7 +347,7 @@
 			files = (
 				9D5DFDEE1CE5655800972699 /* LaunchScreen.storyboard in Resources */,
 				013D63DA1CF0F16E00472FCA /* GoogleService-Info.plist in Resources */,
-				E20B9F5D1CF9573E00408E87 /* Assets.xcassets in Resources */,
+				9D5DFDEB1CE5655800972699 /* Assets.xcassets in Resources */,
 				9D5DFDE91CE5655800972699 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -688,7 +688,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "GetRect/GetRect-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Release;
 		};
