@@ -1,0 +1,19 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+platform :ios, '9.0'
+inhibit_all_warnings!
+
+target 'GetRect' do
+  use_frameworks!
+
+  pod 'SwiftyJSON', '~> 2.3'
+  pod 'Alamofire', '~> 3.4'
+  target 'GetRectTests' do
+    inherit! :search_paths
+  end
+
+  target 'GetRectUITests' do
+    inherit! :search_paths
+  end
+
+end
