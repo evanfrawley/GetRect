@@ -9,10 +9,9 @@
 import UIKit
 import SwiftyJSON
 import Alamofire
+import AddressBook
 
 class PostViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
-
-    
     
     var placeholder :JSON = [
             ["uri": "spotify:track:4Y8XcGssM81dwtlbjkqfm5",
@@ -35,7 +34,7 @@ class PostViewController: UIViewController, UITableViewDelegate, UITableViewData
             "score": 123,
             "geoloc": [47.6062,122.3321],
             "fbid": "123123123123"],
-
+            
             ]
     
     @IBOutlet weak var tableView: UITableView!
@@ -48,49 +47,30 @@ class PostViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.searchBar.delegate = self
-        // Do any additional setup after loading the view.
         self.searchBar.showsCancelButton = true
-        //self.searchBar.delegate = self.delegate
-        
-        
-        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-    
     
     //initializes the tableview cells
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCellWithIdentifier("PostCell", forIndexPath: indexPath) as! PostTableCell
-        
-        print(indexPath.row)
-        
         let post = self.data["tracks", "items", indexPath.row]
-        
-        
         cell.title?.text = post["name"].stringValue
         cell.artist?.text = post["artists", 0, "name"].stringValue
         cell.uri = post["uri"].stringValue
-        print(cell.uri)
         if post["album", "images", 0, "url"].stringValue != "" {
-            let imgURL:NSURL = NSURL(string: post["album", "images", 0, "url"].stringValue)!
+            let imgURL:NSURL = NSURL(string: post["album", "images", 2, "url"].stringValue)!
             let imgData:NSData? = NSData(contentsOfURL: imgURL)
             cell.art?.image = UIImage(data: imgData!)
         }
-        
-        
         return cell
     }
     
-    
-    
     //required function
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(data["tracks", "items"].count)
         return data["tracks", "items"].count
     }
     
@@ -100,25 +80,35 @@ class PostViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
-        
         self.searchBar.resignFirstResponder()
         self.searchBar.text = ""
     }
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-        
         self.searchBar.resignFirstResponder()
         let searchQuery = self.searchBar.text!
-        print(searchQuery)
         api.callSearch(searchQuery) { (responseObject) in
             self.data = responseObject
-            print(responseObject)
             self.tableView.reloadData()
         }
-        
-        
     }
     
+    func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+        let send = UITableViewRowAction(style: .Normal, title: "Send") { action, index in
+            print("send button tapped")
+            //call send function here
+        }
+        send.backgroundColor = UIColor.lightGrayColor()
+        
+        let post = UITableViewRowAction(style: .Normal, title: "Post") { action, index in
+            print("post button tapped")
+            //call post function here
+        }
+        post.backgroundColor = UIColor.orangeColor()
+        
+        
+        
+        return [send, post]
 
-
+    }
 }

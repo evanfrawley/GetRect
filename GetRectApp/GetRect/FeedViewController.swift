@@ -10,31 +10,11 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-
 class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
-    //things that I need to get from the spotify API
-    /* URI
-     * track name
-     * artist name
-     * img url
-     */
-    /*
-     example of a test call with Alamofire / SwiftJSON
-     let baseURL = "https://api.spotify.com/v1/tracks"
-     let params = ["ids": "0eGsygTp906u18L0Oimnem,37S0dTkF8GlXoZi7j4Sbzr"]
-     
-     let test = Alamofire.request(.GET, baseURL, parameters: params)
-     .responseJSON{ response in
-     
-     NSLog("this should do something")
-     let json = JSON(response.result.value!)
-     let testString = json["tracks", 0, "uri"].stringValue
-     NSLog(testString)
-     
-     }
- 
-     */
+    
+    var player:SPTAudioStreamingController?
+    var playableURIs:NSArray?
+    let kClientID = "1a475789c4004e6584ad764a80430f52"
     
     //placeholder for the inteded firebase JSON data
     var placeholder :JSON = [
@@ -58,7 +38,6 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
             "score": 123,
             "geoloc": [47.6062,122.3321],
                 "fbid": "123123123123"],
-
             
             ["uri": "spotify:track:3UgSQu6WwrXfKKDq019IHE",
                 "user": "evanfrawley",
@@ -90,55 +69,56 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
             ]
     
     let api:SpotifyAPIHandler = SpotifyAPIHandler.init()
-    
     var data:JSON = JSON([:])
 
-
-    //use this formatting: http://stackoverflow.com/questions/26672547/swift-handling-json-with-alamofire-swiftyjson
     @IBOutlet weak var tableView: UITableView!
     
     //initializer viewDidLoad
     override func viewDidLoad() {
-        
         super.viewDidLoad()
-        
         self.tableView.dataSource = self
+    }
+    
+    override func viewWillAppear(animated: Bool) {
         self.tableView.delegate = self
         
-        //makes call to start getting the spotify API data
         api.callTracks(api.parseSpotifyID(self.placeholder)) { (responseObject) in
             self.data = responseObject
+            self.makePlayableURIArray(responseObject)
             self.tableView.reloadData()
         }
         
-        // Do any additional setup after loading the view.
     }
-
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     //initializes the tableview cells
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCellWithIdentifier("FeedCell", forIndexPath: indexPath) as! FeedTableCell
         let post = self.data["tracks", indexPath.row]
-        
-        
         cell.title?.text = post["name"].stringValue
         cell.artist?.text = post["artists", 0, "name"].stringValue
         cell.uri = post["uri"].stringValue
         if post["album", "images", 0, "url"].stringValue != "" {
-            let imgURL:NSURL = NSURL(string: post["album", "images", 0, "url"].stringValue)!
+            let imgURL:NSURL = NSURL(string: post["album", "images", 2, "url"].stringValue)!
             let imgData:NSData? = NSData(contentsOfURL: imgURL)
             cell.art?.image = UIImage(data: imgData!)
         }
         return cell
-        
     }
-    	
+    
+    func makePlayableURIArray(data:JSON) {
+        var uris:NSArray = []
+        
+        for uri in 0 ..< data["tracks"].count {
+            uris = uris.arrayByAddingObject(NSURL(string: data["tracks", uri, "uri"].stringValue)!)
+        }
+        print(uris)
+        self.playableURIs = uris
+    }
+    
     //required function
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return placeholder.count
@@ -148,6 +128,66 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
+    
+    func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+        let like = UITableViewRowAction(style: .Normal, title: "👍") { action, index in
+            print("like button tapped")
+        }
+        like.backgroundColor = UIColor.greenColor()
+        
+        let dislike = UITableViewRowAction(style: .Normal, title: "👎") { action, index in
+            print("dislike button tapped")
+        }
+        dislike.backgroundColor = UIColor.redColor()
+        
+        return [like, dislike]
+    }
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let row:NSInteger = indexPath.row
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        let sesh = userDefaults.objectForKey("SpotifySession") as! NSData
+        let session = NSKeyedUnarchiver.unarchiveObjectWithData(sesh) as! SPTSession
+        
+        self.playUsingSession(session, row: row)
+    }
+    
+    func playUsingSession(sessionObj:SPTSession!, row:NSInteger){
+        let newRow:Int32 = Int32(row)
+        print("new row is: \(newRow)")
+        print("entered session player")
+        if self.player == nil {
+            self.player = SPTAudioStreamingController(clientId: kClientID)
+            print("player init")
+        }
+        
+        print("token is: \(sessionObj.accessToken)")
+        
+        if !self.player!.loggedIn {
+            //this should be where i set the player to do something kek
+            self.player?.loginWithSession(sessionObj, callback: { (error:NSError!) in
+                print("i'm in the login")
+                if error != nil {
+                    print("got this error for playback: \(error)")
+                    return
+                }
+            })
+        }
+            
+        self.player?.playURIs(self.playableURIs as! [AnyObject], fromIndex: newRow, callback: { (error:NSError!) in
+            print("i'm in the player")
+            if error != nil {
+                print("error while starting playback: \(error)")
+                return
+            } else {
+                print("should be playing")
+            }
+        })
+            
+            
+        
+        
+    }
+
     
 }
     

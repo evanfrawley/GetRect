@@ -14,6 +14,7 @@
 		201030421CF1A8BF00E25635 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2010303E1CF1A8BF00E25635 /* ViewController.swift */; };
 		201030961CF2E5F400E25635 /* FeedTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201030951CF2E5F400E25635 /* FeedTableCell.swift */; };
 		205450F01CF8FBDD003AF561 /* ResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205450EF1CF8FBDD003AF561 /* ResultsTableViewController.swift */; };
+		205451311CFD9292003AF561 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205451301CFD9292003AF561 /* TabBarViewController.swift */; };
 		209D61FE1CEF961600FDF372 /* Spotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 209D61FD1CEF961600FDF372 /* Spotify.framework */; };
 		20A75D771CF79C43004FC557 /* PostTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A75D761CF79C43004FC557 /* PostTableCell.swift */; };
 		20A75D791CF79E78004FC557 /* SpotifyAPIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A75D781CF79E78004FC557 /* SpotifyAPIHandler.swift */; };
@@ -54,6 +55,7 @@
 		2010303E1CF1A8BF00E25635 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		201030951CF2E5F400E25635 /* FeedTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTableCell.swift; sourceTree = "<group>"; };
 		205450EF1CF8FBDD003AF561 /* ResultsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsTableViewController.swift; sourceTree = "<group>"; };
+		205451301CFD9292003AF561 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		206E84B01CEF7AD600F6260D /* GetRect-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GetRect-Bridging-Header.h"; sourceTree = "<group>"; };
 		209D61FD1CEF961600FDF372 /* Spotify.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Spotify.framework; sourceTree = "<group>"; };
 		20A75D761CF79C43004FC557 /* PostTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableCell.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 		209D62171CEFB95500FDF372 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				205451301CFD9292003AF561 /* TabBarViewController.swift */,
 				2010303B1CF1A8BF00E25635 /* FeedViewController.swift */,
 				2010303C1CF1A8BF00E25635 /* PostViewController.swift */,
 				2010303D1CF1A8BF00E25635 /* SettingsViewController.swift */,
@@ -499,6 +502,7 @@
 				9D5DFDE41CE5655800972699 /* AppDelegate.swift in Sources */,
 				205450F01CF8FBDD003AF561 /* ResultsTableViewController.swift in Sources */,
 				20A75D791CF79E78004FC557 /* SpotifyAPIHandler.swift in Sources */,
+				205451311CFD9292003AF561 /* TabBarViewController.swift in Sources */,
 				201030411CF1A8BF00E25635 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

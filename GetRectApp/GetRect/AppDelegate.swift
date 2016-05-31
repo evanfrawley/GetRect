@@ -24,15 +24,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool {
-        NSLog("button clicked 1")
         if SPTAuth.defaultInstance().canHandleURL(url) {
-            NSLog("button clicked 2")
             SPTAuth.defaultInstance().handleAuthCallbackWithTriggeredAuthURL(url, callback: { (error:NSError!, session:SPTSession!) in
                 if error != nil {
-                    print("authentication error")
                     return
                 }
-                NSLog("button clicked 3")
                 
                 let userDefaults = NSUserDefaults.standardUserDefaults()
                 let sessionData = NSKeyedArchiver.archivedDataWithRootObject(session)
