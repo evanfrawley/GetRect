@@ -10,13 +10,16 @@ import UIKit
 
 class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
 
+    var player:SPTAudioStreamingController!
+    
+    
     override func viewWillAppear(animated: Bool) {
         
         let post = storyboard?.instantiateViewControllerWithIdentifier("PostScene") as! PostViewController
         let feed = storyboard?.instantiateViewControllerWithIdentifier("FeedScene") as! FeedViewController
         let settings = storyboard?.instantiateViewControllerWithIdentifier("SettingsScene") as! SettingsViewController
         
-        let controllers = [post, feed, settings]
+        let controllers = [feed, post, settings]
         self.viewControllers = controllers
         
     }

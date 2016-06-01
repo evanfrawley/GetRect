@@ -41,6 +41,8 @@ class PostViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var searchBar: UISearchBar!
     var api = SpotifyAPIHandler.init()
     var data:JSON = JSON([:])
+    var feedRef:FeedViewController!
+    var playableURIs:NSArray = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +50,7 @@ class PostViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.tableView.delegate = self
         self.searchBar.delegate = self
         self.searchBar.showsCancelButton = true
+        feedRef = self.tabBarController?.viewControllers![0] as! FeedViewController
     }
 
     override func didReceiveMemoryWarning() {
@@ -89,6 +92,7 @@ class PostViewController: UIViewController, UITableViewDelegate, UITableViewData
         let searchQuery = self.searchBar.text!
         api.callSearch(searchQuery) { (responseObject) in
             self.data = responseObject
+            self.makePlayableURIArray(responseObject)
             self.tableView.reloadData()
         }
     }
@@ -105,10 +109,43 @@ class PostViewController: UIViewController, UITableViewDelegate, UITableViewData
             //call post function here
         }
         post.backgroundColor = UIColor.orangeColor()
-        
-        
-        
         return [send, post]
 
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let row:NSInteger = indexPath.row
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        let sesh = userDefaults.objectForKey("SpotifySession") as! NSData
+        let session = NSKeyedUnarchiver.unarchiveObjectWithData(sesh) as! SPTSession
+        
+        self.playUsingSession(session, row: row)
+    }
+    
+    func makePlayableURIArray(data:JSON) {
+        var uris:NSArray = []
+        for uri in 0 ..< data["tracks", "items"].count {
+            uris = uris.arrayByAddingObject(NSURL(string: data["tracks", "items", uri, "uri"].stringValue)!)
+        }
+        print(uris)
+        self.playableURIs = uris
+    }
+    
+    func playUsingSession(sessionObj:SPTSession!, row:NSInteger){
+        let newRow:Int32 = Int32(row)
+        api.injectPostURIs(self.playableURIs)
+        api.startStreamingSession(sessionObj, index: newRow, type: self.title!)
+    }
+    
+    @IBAction func prev(sender: AnyObject) {
+        api.prev();
+    }
+    
+    @IBAction func play(sender: AnyObject) {
+        api.pausePlay()
+    }
+
+    @IBAction func next(sender: AnyObject) {
+        api.next()
     }
 }

@@ -15,68 +15,71 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     var player:SPTAudioStreamingController?
     var playableURIs:NSArray?
     let kClientID = "1a475789c4004e6584ad764a80430f52"
+    let api:SpotifyAPIHandler = SpotifyAPIHandler.init()
+    var data:JSON = JSON([:])
+    var postRef:PostViewController!
+    @IBOutlet weak var playButton: UIToolbar!
+    @IBOutlet weak var tableView: UITableView!
     
     //placeholder for the inteded firebase JSON data
     var placeholder :JSON = [
-            ["uri": "spotify:track:4Y8XcGssM81dwtlbjkqfm5",
+        ["uri": "spotify:track:4Y8XcGssM81dwtlbjkqfm5",
             "user": "evanfrawley",
             "timestamp": "123/123/123",
             "score": 666,
             "geoloc": [47.6062,122.3321],
             "fbid": "123123123123"],
-            
-            ["uri": "spotify:track:2G5nzWdblGm29nO1r7WxCU",
+        
+        ["uri": "spotify:track:2G5nzWdblGm29nO1r7WxCU",
             "user": "evanfrawley",
             "timestamp": "123/123/123",
             "score": 420,
             "geoloc": [47.6062,122.3321],
             "fbid": "123123123123"],
-            
-            ["uri": "spotify:track:0Ix7doBgImhoWJfDnwezP1",
+        
+        ["uri": "spotify:track:0Ix7doBgImhoWJfDnwezP1",
             "user": "evanfrawley",
             "timestamp": "123/123/123",
             "score": 123,
             "geoloc": [47.6062,122.3321],
-                "fbid": "123123123123"],
-            
-            ["uri": "spotify:track:3UgSQu6WwrXfKKDq019IHE",
-                "user": "evanfrawley",
-                "timestamp": "123/123/123",
-                "score": 123,
-                "geoloc": [47.6062,122.3321],
-                "fbid": "123123123123"],
-            
-            ["uri": "spotify:track:48bSfSZaq9Aizbu4AWn4st",
-                "user": "evanfrawley",
-                "timestamp": "123/123/123",
-                "score": 123,
-                "geoloc": [47.6062,122.3321],
-                "fbid": "123123123123"],
-            
-            ["uri": "spotify:track:0P6RjFd2HgG2AXJadQuGfE",
-                "user": "evanfrawley",
-                "timestamp": "123/123/123",
-                "score": 123,
-                "geoloc": [47.6062,122.3321],
-                "fbid": "123123123123"],
-            
-            ["uri": "spotify:track:66hayvUbTotekKU3H4ta1f",
-                "user": "evanfrawley",
-                "timestamp": "123/123/123",
-                "score": 123,
-                "geoloc": [47.6062,122.3321],
-                "fbid": "123123123123"]
-            ]
-    
-    let api:SpotifyAPIHandler = SpotifyAPIHandler.init()
-    var data:JSON = JSON([:])
-
-    @IBOutlet weak var tableView: UITableView!
+            "fbid": "123123123123"],
+        
+        ["uri": "spotify:track:3UgSQu6WwrXfKKDq019IHE",
+            "user": "evanfrawley",
+            "timestamp": "123/123/123",
+            "score": 123,
+            "geoloc": [47.6062,122.3321],
+            "fbid": "123123123123"],
+        
+        ["uri": "spotify:track:48bSfSZaq9Aizbu4AWn4st",
+            "user": "evanfrawley",
+            "timestamp": "123/123/123",
+            "score": 123,
+            "geoloc": [47.6062,122.3321],
+            "fbid": "123123123123"],
+        
+        ["uri": "spotify:track:0P6RjFd2HgG2AXJadQuGfE",
+            "user": "evanfrawley",
+            "timestamp": "123/123/123",
+            "score": 123,
+            "geoloc": [47.6062,122.3321],
+            "fbid": "123123123123"],
+        
+        ["uri": "spotify:track:66hayvUbTotekKU3H4ta1f",
+            "user": "evanfrawley",
+            "timestamp": "123/123/123",
+            "score": 123,
+            "geoloc": [47.6062,122.3321],
+            "fbid": "123123123123"]
+    ]
     
     //initializer viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.dataSource = self
+        
+        postRef = self.tabBarController?.viewControllers![1] as! PostViewController
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -129,6 +132,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         return 1
     }
     
+    //swipe left and right
     func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
         let like = UITableViewRowAction(style: .Normal, title: "👍") { action, index in
             print("like button tapped")
@@ -153,41 +157,23 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func playUsingSession(sessionObj:SPTSession!, row:NSInteger){
         let newRow:Int32 = Int32(row)
-        print("new row is: \(newRow)")
-        print("entered session player")
-        if self.player == nil {
-            self.player = SPTAudioStreamingController(clientId: kClientID)
-            print("player init")
-        }
-        
-        print("token is: \(sessionObj.accessToken)")
-        
-        if !self.player!.loggedIn {
-            //this should be where i set the player to do something kek
-            self.player?.loginWithSession(sessionObj, callback: { (error:NSError!) in
-                print("i'm in the login")
-                if error != nil {
-                    print("got this error for playback: \(error)")
-                    return
-                }
-            })
-        }
-            
-        self.player?.playURIs(self.playableURIs as! [AnyObject], fromIndex: newRow, callback: { (error:NSError!) in
-            print("i'm in the player")
-            if error != nil {
-                print("error while starting playback: \(error)")
-                return
-            } else {
-                print("should be playing")
-            }
-        })
-            
-            
-        
-        
+        api.injectFeedURIs(self.playableURIs!)
+        api.startStreamingSession(sessionObj, index: newRow, type: self.title!)
+    }
+    
+    
+    @IBAction func prevButton(sender: AnyObject) {
+        api.prev()
+    }
+    
+    @IBAction func playPauseButton(sender: AnyObject) {
+        api.pausePlay()
     }
 
+    
+    @IBAction func next(sender: AnyObject) {
+        api.next()
+    }
     
 }
     
