@@ -8,14 +8,17 @@
 
 import UIKit
 import SwiftyJSON
+import CoreLocation
+import MapKit
 
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, CLLocationManagerDelegate {
 
     let kClientID = "1a475789c4004e6584ad764a80430f52"
     let kCallbackURL = "getrect://callback"
     let kClientSecret = "114ba2547a2c47d39abe3bdc6dd662d6"
     
+    var locationManager: CLLocationManager!
     
     @IBOutlet weak var button: UIButton!
     var session:SPTSession!
@@ -25,7 +28,52 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        DB.sharedInstance.login("123456789")
+        
+        // Can use this to grey out the app until location services are allowed
+        //   then set to clearColor.
+        //view.backgroundColor = UIColor.grayColor()
+        //view.backgroundColor = UIColor.clearColor()
+        
+        locationManager = CLLocationManager()
+        
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.requestLocation()
+        
+        DB.sharedInstance.getUserPosts()
+        
+        // LOGIN: DB.sharedInstance.login("123456789") [spotify user id]
+        // SIGNUP: DB.sharedInstance.newUser("123456789") [spotify user id]
+        
+        // UPVOTE: DB.sharedInstance.upvote("-KJCgzvjSDsbcujWBgZW") [post id]
+        // DOWNVOTE: DB.sharedInstance.downvote("-KJCgzvjSDsbcujWBgZW") [post id]
+    }
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        // NEW POST: DB.sharedInstance.newPost("Redemption", loc: locations.last!) [song name and location]
+        print("location: [\(locations.last!.coordinate.latitude), \(locations.last!.coordinate.longitude)]")
+    }
+    
+    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+        print(error.code)
+    }
+    
+    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        switch status {
+        case .Authorized:
+            print("authorized")
+        case .AuthorizedWhenInUse:
+            print("authorized when in use")
+        case .Denied:
+            print("denied")
+        case .NotDetermined:
+            print("not determined")
+        case .Restricted:
+            print("restricted")
+        }
     }
     
     override func viewDidAppear(animated: Bool) {

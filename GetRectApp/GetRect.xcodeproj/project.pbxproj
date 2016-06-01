@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01A445901CFF4CEE007C751C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01A4458F1CFF4CEE007C751C /* GoogleService-Info.plist */; };
+		01A445911CFF4CEE007C751C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01A4458F1CFF4CEE007C751C /* GoogleService-Info.plist */; };
+		01A445921CFF4CEE007C751C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01A4458F1CFF4CEE007C751C /* GoogleService-Info.plist */; };
+		01A4459C1CFF562B007C751C /* DB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A4459B1CFF562B007C751C /* DB.swift */; };
+		01A4459D1CFF562B007C751C /* DB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A4459B1CFF562B007C751C /* DB.swift */; };
+		01A4459E1CFF562B007C751C /* DB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A4459B1CFF562B007C751C /* DB.swift */; };
+		01A445A01CFF6DE8007C751C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01A4459F1CFF6DE8007C751C /* CoreLocation.framework */; };
 		0382EFA7A81C9D7200CDB05F /* Pods_GetRectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 949CEB91BE431943BE252EAC /* Pods_GetRectTests.framework */; };
 		2010303F1CF1A8BF00E25635 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2010303B1CF1A8BF00E25635 /* FeedViewController.swift */; };
 		201030401CF1A8BF00E25635 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2010303C1CF1A8BF00E25635 /* PostViewController.swift */; };
@@ -47,6 +54,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01A4458F1CFF4CEE007C751C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		01A4459B1CFF562B007C751C /* DB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DB.swift; sourceTree = "<group>"; };
+		01A4459F1CFF6DE8007C751C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		1550F9B89BCB1FC28FD79408 /* Pods_GetRect.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GetRect.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F108B2567A2F1A0DDCE1A44 /* Pods-GetRect.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GetRect.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GetRect/Pods-GetRect.debug.xcconfig"; sourceTree = "<group>"; };
 		2010303B1CF1A8BF00E25635 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01A445A01CFF6DE8007C751C /* CoreLocation.framework in Frameworks */,
 				9D5DFE1A1CE5692800972699 /* AVFoundation.framework in Frameworks */,
 				209D61FE1CEF961600FDF372 /* Spotify.framework in Frameworks */,
 				43AAB4E57C3D698748E96A0F /* Pods_GetRect.framework in Frameworks */,
@@ -143,6 +154,7 @@
 				2010303C1CF1A8BF00E25635 /* PostViewController.swift */,
 				2010303D1CF1A8BF00E25635 /* SettingsViewController.swift */,
 				2010303E1CF1A8BF00E25635 /* ViewController.swift */,
+				01A4459B1CFF562B007C751C /* DB.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -190,6 +202,7 @@
 		9D5DFDE21CE5655800972699 /* GetRect */ = {
 			isa = PBXGroup;
 			children = (
+				01A4458F1CFF4CEE007C751C /* GoogleService-Info.plist */,
 				20A75D7A1CF79E7D004FC557 /* Models */,
 				201030941CF2E5AB00E25635 /* Views */,
 				209D62181CEFB97200FDF372 /* Storyboards */,
@@ -224,6 +237,7 @@
 		FECFEFC18CCC43E524E42D6A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				01A4459F1CFF6DE8007C751C /* CoreLocation.framework */,
 				1550F9B89BCB1FC28FD79408 /* Pods_GetRect.framework */,
 				949CEB91BE431943BE252EAC /* Pods_GetRectTests.framework */,
 				6882B7665E869A7F96D21278 /* Pods_GetRectUITests.framework */,
@@ -307,7 +321,7 @@
 				TargetAttributes = {
 					9D5DFDDF1CE5655800972699 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = S4A2CDSF6D;
+						DevelopmentTeam = MYKB4J9SMT;
 					};
 					9D5DFDF31CE5655800972699 = {
 						CreatedOnToolsVersion = 7.3;
@@ -345,6 +359,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D5DFDEE1CE5655800972699 /* LaunchScreen.storyboard in Resources */,
+				01A445901CFF4CEE007C751C /* GoogleService-Info.plist in Resources */,
 				9D5DFDEB1CE5655800972699 /* Assets.xcassets in Resources */,
 				9D5DFDE91CE5655800972699 /* Main.storyboard in Resources */,
 			);
@@ -354,6 +369,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01A445911CFF4CEE007C751C /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,6 +377,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01A445921CFF4CEE007C751C /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -495,6 +512,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				201030421CF1A8BF00E25635 /* ViewController.swift in Sources */,
+				01A4459C1CFF562B007C751C /* DB.swift in Sources */,
 				201030961CF2E5F400E25635 /* FeedTableCell.swift in Sources */,
 				201030401CF1A8BF00E25635 /* PostViewController.swift in Sources */,
 				20A75D771CF79C43004FC557 /* PostTableCell.swift in Sources */,
@@ -512,6 +530,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D5DFDF91CE5655800972699 /* GetRectTests.swift in Sources */,
+				01A4459D1CFF562B007C751C /* DB.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,6 +539,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D5DFE041CE5655800972699 /* GetRectUITests.swift in Sources */,
+				01A4459E1CFF562B007C751C /* DB.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -658,7 +678,10 @@
 				);
 				INFOPLIST_FILE = GetRect/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"$(inherited)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.evanfrawley.GetRect;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -682,7 +705,10 @@
 				);
 				INFOPLIST_FILE = GetRect/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"$(inherited)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.evanfrawley.GetRect;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
