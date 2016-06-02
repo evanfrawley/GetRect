@@ -18,6 +18,8 @@
 		209D61FE1CEF961600FDF372 /* Spotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 209D61FD1CEF961600FDF372 /* Spotify.framework */; };
 		20A75D771CF79C43004FC557 /* PostTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A75D761CF79C43004FC557 /* PostTableCell.swift */; };
 		20A75D791CF79E78004FC557 /* SpotifyAPIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A75D781CF79E78004FC557 /* SpotifyAPIHandler.swift */; };
+		20AEAEE61CFFEE230055FDE2 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20AEAEE51CFFEE230055FDE2 /* MapKit.framework */; };
+		20AEAEEA1CFFEEFC0055FDE2 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AEAEE91CFFEEFC0055FDE2 /* MapViewController.swift */; };
 		43AAB4E57C3D698748E96A0F /* Pods_GetRect.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1550F9B89BCB1FC28FD79408 /* Pods_GetRect.framework */; };
 		9D5DFDE41CE5655800972699 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5DFDE31CE5655800972699 /* AppDelegate.swift */; };
 		9D5DFDE91CE5655800972699 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D5DFDE71CE5655800972699 /* Main.storyboard */; };
@@ -60,6 +62,8 @@
 		209D61FD1CEF961600FDF372 /* Spotify.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Spotify.framework; sourceTree = "<group>"; };
 		20A75D761CF79C43004FC557 /* PostTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableCell.swift; sourceTree = "<group>"; };
 		20A75D781CF79E78004FC557 /* SpotifyAPIHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotifyAPIHandler.swift; sourceTree = "<group>"; };
+		20AEAEE51CFFEE230055FDE2 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		20AEAEE91CFFEEFC0055FDE2 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		303542804B0C2DB0C87FF9F8 /* Pods-GetRectUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GetRectUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GetRectUITests/Pods-GetRectUITests.release.xcconfig"; sourceTree = "<group>"; };
 		35D65DB19C85236A5513C8BB /* Pods-GetRectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GetRectTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GetRectTests/Pods-GetRectTests.debug.xcconfig"; sourceTree = "<group>"; };
 		492698DFFEDF09BEE5BACD29 /* Pods-GetRectUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GetRectUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GetRectUITests/Pods-GetRectUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -87,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20AEAEE61CFFEE230055FDE2 /* MapKit.framework in Frameworks */,
 				9D5DFE1A1CE5692800972699 /* AVFoundation.framework in Frameworks */,
 				209D61FE1CEF961600FDF372 /* Spotify.framework in Frameworks */,
 				43AAB4E57C3D698748E96A0F /* Pods_GetRect.framework in Frameworks */,
@@ -143,6 +148,7 @@
 				2010303C1CF1A8BF00E25635 /* PostViewController.swift */,
 				2010303D1CF1A8BF00E25635 /* SettingsViewController.swift */,
 				2010303E1CF1A8BF00E25635 /* ViewController.swift */,
+				20AEAEE91CFFEEFC0055FDE2 /* MapViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -224,6 +230,7 @@
 		FECFEFC18CCC43E524E42D6A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				20AEAEE51CFFEE230055FDE2 /* MapKit.framework */,
 				1550F9B89BCB1FC28FD79408 /* Pods_GetRect.framework */,
 				949CEB91BE431943BE252EAC /* Pods_GetRectTests.framework */,
 				6882B7665E869A7F96D21278 /* Pods_GetRectUITests.framework */,
@@ -494,6 +501,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20AEAEEA1CFFEEFC0055FDE2 /* MapViewController.swift in Sources */,
 				201030421CF1A8BF00E25635 /* ViewController.swift in Sources */,
 				201030961CF2E5F400E25635 /* FeedTableCell.swift in Sources */,
 				201030401CF1A8BF00E25635 /* PostViewController.swift in Sources */,
