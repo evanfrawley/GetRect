@@ -39,7 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 userDefaults.synchronize()
                 
                 NSNotificationCenter.defaultCenter().postNotificationName("successfulLogin", object: nil)
-                
+    
             })
         } else {
             print("can't handle url")

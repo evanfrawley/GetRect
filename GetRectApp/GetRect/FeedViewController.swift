@@ -9,8 +9,9 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import CoreLocation
 
-class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate {
     
     var player:SPTAudioStreamingController?
     var playableURIs:NSArray?
@@ -21,75 +22,63 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var playButton: UIToolbar!
     @IBOutlet weak var tableView: UITableView!
     
+    var locationManager: CLLocationManager!
+    var isFirstLocationUpdate: Bool!
+    
     //placeholder for the inteded firebase JSON data
-    var placeholder :JSON = [
-        ["uri": "spotify:track:4Y8XcGssM81dwtlbjkqfm5",
-            "user": "evanfrawley",
-            "timestamp": "123/123/123",
-            "score": 666,
-            "geoloc": [47.6062,122.3321],
-            "fbid": "123123123123"],
-        
-        ["uri": "spotify:track:2G5nzWdblGm29nO1r7WxCU",
-            "user": "evanfrawley",
-            "timestamp": "123/123/123",
-            "score": 420,
-            "geoloc": [47.6062,122.3321],
-            "fbid": "123123123123"],
-        
-        ["uri": "spotify:track:0Ix7doBgImhoWJfDnwezP1",
-            "user": "evanfrawley",
-            "timestamp": "123/123/123",
-            "score": 123,
-            "geoloc": [47.6062,122.3321],
-            "fbid": "123123123123"],
-        
-        ["uri": "spotify:track:3UgSQu6WwrXfKKDq019IHE",
-            "user": "evanfrawley",
-            "timestamp": "123/123/123",
-            "score": 123,
-            "geoloc": [47.6062,122.3321],
-            "fbid": "123123123123"],
-        
-        ["uri": "spotify:track:48bSfSZaq9Aizbu4AWn4st",
-            "user": "evanfrawley",
-            "timestamp": "123/123/123",
-            "score": 123,
-            "geoloc": [47.6062,122.3321],
-            "fbid": "123123123123"],
-        
-        ["uri": "spotify:track:0P6RjFd2HgG2AXJadQuGfE",
-            "user": "evanfrawley",
-            "timestamp": "123/123/123",
-            "score": 123,
-            "geoloc": [47.6062,122.3321],
-            "fbid": "123123123123"],
-        
-        ["uri": "spotify:track:66hayvUbTotekKU3H4ta1f",
-            "user": "evanfrawley",
-            "timestamp": "123/123/123",
-            "score": 123,
-            "geoloc": [47.6062,122.3321],
-            "fbid": "123123123123"]
-    ]
+    var placeholder :[[String: String]] = [[String: String]]()
     
     //initializer viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.delegate = self
+        locationManager = CLLocationManager()
+        isFirstLocationUpdate = true
+        DB.sharedInstance.refreshFeed = true
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+        
         self.tableView.dataSource = self
         
         postRef = self.tabBarController?.viewControllers![1] as! PostViewController
-        
+    }
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if isFirstLocationUpdate! {
+            print("burning cached location")
+            isFirstLocationUpdate = false
+            return
+        } else {
+            //print("[\(locations.last!.coordinate.latitude), \(locations.last!.coordinate.longitude)]")
+            DB.sharedInstance.currentLocation = locations.last!
+            if DB.sharedInstance.refreshFeed! {
+                loadFeed()
+                DB.sharedInstance.refreshFeed = false
+            }
+        }
+    }
+    
+    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+        print("Error getting location")
+    }
+    
+    func loadFeed() {
+        print("GETTING FEED")
+        DB.sharedInstance.getFeed(DB.sharedInstance.currentLocation!, radius: DB.sharedInstance.feedRad) { (posts) in
+            self.placeholder = posts
+            print(posts)
+            
+            self.api.callTracks(self.api.parseSpotifyID(self.placeholder)) { (responseObject) in
+                self.data = responseObject
+                self.makePlayableURIArray(responseObject)
+                self.tableView.reloadData()
+            }
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
-        self.tableView.delegate = self
-        
-        api.callTracks(api.parseSpotifyID(self.placeholder)) { (responseObject) in
-            self.data = responseObject
-            self.makePlayableURIArray(responseObject)
-            self.tableView.reloadData()
-        }
         
     }
     
