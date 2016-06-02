@@ -30,20 +30,25 @@ class SpotifyAPIHandler {
     
     func callTracks( params:String, completionHandler: (responseObject:JSON)->() ) {
         let dict = ["ids":params]
+        
         makeCall("tracks", params: dict, completionHandler: completionHandler)
     }
     
-    func parseSpotifyID(fbData:JSON) -> String {
+    func parseSpotifyID(fbData:[[String:String]]) -> String {
         var combinedURI:String = ""
+        let js = JSON(fbData)
         
-        for (_,subJson):(String, JSON) in fbData {
-            let trackURI:String = subJson["uri"].stringValue.componentsSeparatedByString(":")[2]
+        for (_, object) in js {
+            let tester:String = object["uri"].stringValue.componentsSeparatedByString(":")[2]
             if combinedURI == "" {
-                combinedURI = trackURI
+                combinedURI = tester
             } else {
-                combinedURI += (",\(trackURI)")
+                combinedURI += (",\(tester)")
             }
+
         }
+
+        print("combined uri: \(combinedURI)")
         return combinedURI
     }
     

@@ -17,11 +17,14 @@ class DB {
     var ref: FIRDatabaseReference!
     var feedRad: Int
     var feedLocation: CLLocationCoordinate2D
+    var currentLocation: CLLocation!
+    var refreshFeed: Bool!
 
     init() {
         self.ref = FIRDatabase.database().reference()
-        self.feedRad = 0
+        self.feedRad = 5500
         self.feedLocation = CLLocationCoordinate2D()
+        self.refreshFeed = false
     }
     
     static let sharedInstance = DB()
@@ -64,7 +67,7 @@ class DB {
         let key = ref.child("posts").childByAutoId().key
         let post = [
             "uid": userID,
-            "songURI": songURI,
+            "uri": songURI,
             "location": [
                 "lat": lat,
                 "long": long
@@ -115,7 +118,7 @@ class DB {
                 let lat = post.value.objectForKey("location")!.objectForKey("lat")
                 let long = post.value.objectForKey("location")!.objectForKey("long")
                 let time = post.value!["time"] as! String
-                let songURI = post.value!["songURI"] as! String
+                let songURI = post.value!["uri"] as! String
                 let score = post.value!["score"] as! Int
                 let uid = post.value!["uid"] as! String
                 
@@ -124,7 +127,7 @@ class DB {
                     "lat": "\(lat)",
                     "long": "\(long)",
                     "time": time,
-                    "songURI": songURI,
+                    "uri": songURI,
                     "score": "\(score)",
                     "uid": uid
                 ]
@@ -163,7 +166,6 @@ class DB {
     }
     
     func getFeed(location: CLLocation, radius: Int, completionHandler: (posts: [[String: String]]) -> ()) {
-        // 1 mile = 1609.34 m
         
         ref.child("posts").observeSingleEventOfType(.Value, withBlock: { snapshot in
             
@@ -175,12 +177,12 @@ class DB {
                 
                 let newLoc = CLLocation(latitude: lat!, longitude: long!)
                 
-                if location.distanceFromLocation(newLoc) < (Double(radius) * 1609.34) {
+                if location.distanceFromLocation(newLoc) < (Double(radius)) {
                     let postID = post.ref.key
                     let lat = post.value.objectForKey("location")!.objectForKey("lat")
                     let long = post.value.objectForKey("location")!.objectForKey("long")
                     let time = post.value!["time"] as! String
-                    let songURI = post.value!["songURI"] as! String
+                    let songURI = post.value!["uri"] as! String
                     let score = post.value!["score"] as! Int
                     let uid = post.value!["uid"] as! String
                     
@@ -189,7 +191,7 @@ class DB {
                         "lat": "\(lat)",
                         "long": "\(long)",
                         "time": time,
-                        "songURI": songURI,
+                        "uri": songURI,
                         "score": "\(score)",
                         "uid": uid
                     ]

@@ -19,67 +19,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     let kCallbackURL = "getrect://callback"
     let kClientSecret = "114ba2547a2c47d39abe3bdc6dd662d6"
     
-    var locationManager: CLLocationManager!
-    
     @IBOutlet weak var button: UIButton!
     var session:SPTSession!
     var player:SPTAudioStreamingController?
     let auth = SPTAuth.defaultInstance()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        locationManager = CLLocationManager()
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.requestLocation()
-             
-        DB.sharedInstance.login("123456789")
-        //DB.sharedInstance.newUser("123456789")
-        
-        /*for state in states {
-            let newURI = "www.\(state["State"]!).com"
-            let newLoc = CLLocation(latitude: state["Latitude"] as! CLLocationDegrees, longitude: state["Longitude"] as! CLLocationDegrees)
-            DB.sharedInstance.newPost(newURI, loc: newLoc)
-        }*/
-        
-        
-        // GET TOTAL USER SCORE
-        /*DB.sharedInstance.getUserScore { (totalScore) in
-            print("total score: \(totalScore)")
-        }*/
-        
-        // LOGIN: func login(spotifyID: String)
-        // NEW USER: func newUser(spotifyID: String)
-        
-        // NEW POST: func newPost(song: String, loc: CLLocation)
-        
-        // UPVOTE: func upvote(postID: String)
-        // DOWNVOTE: func downvote(postID: String) postID = unqiueID
-        
-        // GET USER POSTS: func getUserPosts(completionHandler: (posts: [[String: String]]) -> ())
-        /*DB.sharedInstance.getUserPosts() { (posts) in
-         for post in posts {
-         print("woohoo, \(post["postID"])")
-         }
-         }*/
     }
     
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        print("GETTING FEED")
-        DB.sharedInstance.getFeed(locations.last!, radius: 1500) { (posts) in
-            for post in posts {
-                print("URI: \(post["songURI"]!)")
-            }
-        }
-    }
-
-    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
-        print("Error getting location")
-    }
-
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         self.auth.clientID = kClientID
@@ -93,61 +41,63 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         if let sessionObj:AnyObject = userDefaults.objectForKey("SpotifySession") {
             let sessionDataObj = sessionObj as! NSData
-            let session = NSKeyedUnarchiver.unarchiveObjectWithData(sessionDataObj) as! SPTSession
-            if !session.isValid() {
-                UIApplication.sharedApplication().openURL(self.auth.loginURL)
-            } else {
+            session = NSKeyedUnarchiver.unarchiveObjectWithData(sessionDataObj) as! SPTSession
+            print(session.isValid())
+            if session.isValid() {
                 self.button.hidden = true
                 self.updateAfterLogin()
+            } else {
+                login("")
             }
         } else {
             self.button.hidden = false
         }
     }
     
+    func firebaseAuth(session: SPTSession!) {
+        let spotifyID = session.canonicalUsername
+        FIRAuth.auth()?.signInWithEmail(spotifyID + "@email.com", password: spotifyID) { (user, error) in
+            if let error = error {
+                print("Firebase error: \(error.localizedDescription)")
+                FIRAuth.auth()?.createUserWithEmail(spotifyID + "@email.com", password: spotifyID, completion: { (user, e) in
+                    if let e = e {
+                        print("Firebase error: \(e.localizedDescription)")
+                    } else {
+                        print("Firebase new account created!")
+                    }
+                })
+                return
+            } else {
+                print("Firebase login worked!")
+            }
+        }
+    }
+    
     @IBAction func login(sender: AnyObject) {
         UIApplication.sharedApplication().openURL(self.auth.loginURL)
-        //self.viewDidLoad()
+        //viewDidAppear(false)
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func updateAfterLogin() {
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        
+        if let sessionObj:AnyObject = userDefaults.objectForKey("SpotifySession") {
+            let sessionDataObj = sessionObj as! NSData
+            session = NSKeyedUnarchiver.unarchiveObjectWithData(sessionDataObj) as! SPTSession
+            if session.isValid() {
+                firebaseAuth(session)
+            } else {
+                login("")
+            }
+        }
+        
         print("should go to tab controller")
         let tbc :AnyObject! = self.storyboard?.instantiateViewControllerWithIdentifier("TabController")
         self.showViewController(tbc as! UITabBarController, sender: self)
-    }
-    
-    
-    func playUsingSession(sessionObj:SPTSession!){
-        
-        print("entered session player")
-        if self.player == nil {
-            self.player = SPTAudioStreamingController(clientId: kClientID)
-            print("player init")
-        }
-        
-        print("token is: \(sessionObj.accessToken)")
-        self.player?.loginWithSession(sessionObj, callback: { (error:NSError!) in
-            if error != nil {
-                print("got this error for playback: \(error)")
-                return
-            }
-            
-            let array:NSArray = [NSURL(string: "spotify:track:2GQEM9JuHu30sGFvRYeCxz")!, NSURL(string: "spotify:track:5v8umLXzP5j4BDqDxqEyTp")!, NSURL(string: "spotify:track:1NB0VPwAw6Rx8b9qvDKB5M")!]
-            
-            self.player?.playURIs(array as [AnyObject], fromIndex: 0, callback: { (error:NSError!) in
-                if error != nil {
-                    print("error while starting playback: \(error)")
-                    return
-                } else {
-                    print("should be playing")
-                }
-            })
-        })
     }
 }
 
