@@ -22,6 +22,8 @@
 	<string>1.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
+    <key>MGLMapboxAccessToken</key>
+    <string>pk.eyJ1IjoiZXZhbmZyYXdsZXkiLCJhIjoiY2lqemV0cDJpMmx2a3Z3bTV2dGh1bmt0MSJ9.gJsWsiu3AareD8XkI1-0Aw</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>

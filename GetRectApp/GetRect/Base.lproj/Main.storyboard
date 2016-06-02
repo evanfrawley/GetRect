@@ -38,7 +38,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="336" y="426"/>
+            <point key="canvasLocation" x="336" y="427"/>
         </scene>
         <!--Map-->
         <scene sceneID="Wpg-1m-Ehq">
@@ -52,22 +52,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="eqa-r9-DPA">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                            </mapView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vI9-qh-Kq5">
+                                <rect key="frame" x="0.0" y="507" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem title="Item" id="Mwb-cG-wBB">
+                                        <connections>
+                                            <action selector="testButton:" destination="aAf-9P-eDS" id="UVz-ir-0Vl"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="eqa-r9-DPA" secondAttribute="trailing" constant="-20" id="FbU-pT-iuT"/>
-                            <constraint firstItem="eqa-r9-DPA" firstAttribute="top" secondItem="XSh-1H-wnz" secondAttribute="topMargin" id="TXt-RR-irI"/>
-                            <constraint firstItem="eqa-r9-DPA" firstAttribute="leading" secondItem="XSh-1H-wnz" secondAttribute="leadingMargin" constant="-20" id="X9G-Qw-xAQ"/>
-                            <constraint firstItem="SfP-Lb-jXn" firstAttribute="top" secondItem="eqa-r9-DPA" secondAttribute="bottom" id="lD2-F5-ax7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vI9-qh-Kq5" secondAttribute="trailing" constant="-20" id="8bp-f8-Lmk"/>
+                            <constraint firstItem="vI9-qh-Kq5" firstAttribute="leading" secondItem="XSh-1H-wnz" secondAttribute="leadingMargin" constant="-20" id="Kdn-9J-tKk"/>
+                            <constraint firstItem="SfP-Lb-jXn" firstAttribute="top" secondItem="vI9-qh-Kq5" secondAttribute="bottom" id="KyV-jI-7Kp"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="bb5-hC-mG8"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="mapView" destination="eqa-r9-DPA" id="GxL-qr-TQN"/>
+                        <outlet property="toolbar" destination="vI9-qh-Kq5" id="ufu-Zx-pud"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vaa-Qr-nx7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -352,6 +358,23 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HcJ-Xr-I0p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="336" y="-256"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="yC6-7O-98e">
+            <objects>
+                <viewController id="Vqg-PO-Exg" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cSp-Ot-D3f"/>
+                        <viewControllerLayoutGuide type="bottom" id="DYM-3d-DLQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="T2b-RX-RXi">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hAu-2i-ark" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
     <resources>

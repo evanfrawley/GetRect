@@ -12,19 +12,55 @@ import Mapbox
 class MapViewController: UIViewController, MGLMapViewDelegate {
 
     
-    
+
+    @IBOutlet weak var toolbar: UIToolbar!
+    var mapView:MGLMapView!
+    @IBOutlet weak var container: UIView!
+    let mbStyle:NSURL = NSURL(string: "mapbox://styles/mapbox/dark-v9")!
+    var centerPt:CLLocationCoordinate2D = CLLocationCoordinate2D()
+    var centerAnnotation:MGLPointAnnotation = MGLPointAnnotation()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        mapView = MGLMapView(frame: view.bounds)
+        mapView.styleURL = mbStyle
+        mapView.setCenterCoordinate(CLLocationCoordinate2DMake(47.6062, -122.3321), zoomLevel: 11.0, animated: false)
 
-        let mapView = MGLMapView(frame: view.bounds)
         mapView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         
-        // set the map’s center coordinate and zoom level
-        mapView.setCenterCoordinate(CLLocationCoordinate2D(latitude: 59.31, longitude: 18.06), zoomLevel: 9, animated: false)
-        view.addSubview(mapView)
-        // Do any additional setup after loading the view.
+        print("before")
+        let pt = MGLPointAnnotation()
+        pt.coordinate = CLLocationCoordinate2D(latitude: 47.6062, longitude: -122.3321)
+        view.insertSubview(mapView, atIndex:0)
+        
+        
+        print("afteR")
+        // remember to set the delegate (or much of this will not work)
+        mapView.delegate = self
+
     }
+
+    
+    @IBAction func testButton(sender: AnyObject) {
+        let test = mapView.centerCoordinate
+        print("\(test.latitude), \(test.longitude)")
+    }
+    
+    func mapViewRegionIsChanging(mapView: MGLMapView) {
+        mapView.removeAnnotation(self.centerAnnotation)
+        self.centerAnnotation.coordinate = mapView.centerCoordinate
+        mapView.addAnnotation(self.centerAnnotation)
+    }
+    
+    func mapView(mapView: MGLMapView, regionDidChangeAnimated animated: Bool) {
+        self.centerPt = mapView.centerCoordinate
+        mapView.removeAnnotation(self.centerAnnotation)
+        self.centerAnnotation.coordinate = mapView.centerCoordinate
+        mapView.addAnnotation(self.centerAnnotation)
+        
+    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

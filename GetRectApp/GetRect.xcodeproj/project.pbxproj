@@ -25,8 +25,8 @@
 		209D61FE1CEF961600FDF372 /* Spotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 209D61FD1CEF961600FDF372 /* Spotify.framework */; };
 		20A75D771CF79C43004FC557 /* PostTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A75D761CF79C43004FC557 /* PostTableCell.swift */; };
 		20A75D791CF79E78004FC557 /* SpotifyAPIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A75D781CF79E78004FC557 /* SpotifyAPIHandler.swift */; };
-		20AEAEE61CFFEE230055FDE2 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20AEAEE51CFFEE230055FDE2 /* MapKit.framework */; };
 		20AEAEEA1CFFEEFC0055FDE2 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AEAEE91CFFEEFC0055FDE2 /* MapViewController.swift */; };
+		20ECC4171D001B4E002312FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20ECC4161D001B4E002312FB /* Assets.xcassets */; };
 		43AAB4E57C3D698748E96A0F /* Pods_GetRect.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1550F9B89BCB1FC28FD79408 /* Pods_GetRect.framework */; };
 		9D5DFDE41CE5655800972699 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5DFDE31CE5655800972699 /* AppDelegate.swift */; };
 		9D5DFDE91CE5655800972699 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D5DFDE71CE5655800972699 /* Main.storyboard */; };
@@ -73,6 +73,7 @@
 		20A75D781CF79E78004FC557 /* SpotifyAPIHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotifyAPIHandler.swift; sourceTree = "<group>"; };
 		20AEAEE51CFFEE230055FDE2 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		20AEAEE91CFFEEFC0055FDE2 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		20ECC4161D001B4E002312FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../Assets.xcassets; sourceTree = "<group>"; };
 		303542804B0C2DB0C87FF9F8 /* Pods-GetRectUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GetRectUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GetRectUITests/Pods-GetRectUITests.release.xcconfig"; sourceTree = "<group>"; };
 		35D65DB19C85236A5513C8BB /* Pods-GetRectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GetRectTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GetRectTests/Pods-GetRectTests.debug.xcconfig"; sourceTree = "<group>"; };
 		492698DFFEDF09BEE5BACD29 /* Pods-GetRectUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GetRectUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GetRectUITests/Pods-GetRectUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -99,7 +100,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20AEAEE61CFFEE230055FDE2 /* MapKit.framework in Frameworks */,
 				01E394F91CFFEF7500B81964 /* CoreLocation.framework in Frameworks */,
 				9D5DFE1A1CE5692800972699 /* AVFoundation.framework in Frameworks */,
 				209D61FE1CEF961600FDF372 /* Spotify.framework in Frameworks */,
@@ -206,6 +206,7 @@
 		9D5DFDE21CE5655800972699 /* GetRect */ = {
 			isa = PBXGroup;
 			children = (
+				20ECC4161D001B4E002312FB /* Assets.xcassets */,
 				20A75D7A1CF79E7D004FC557 /* Models */,
 				201030941CF2E5AB00E25635 /* Views */,
 				209D62181CEFB97200FDF372 /* Storyboards */,
@@ -364,6 +365,7 @@
 			files = (
 				9D5DFDEE1CE5655800972699 /* LaunchScreen.storyboard in Resources */,
 				9D5DFDE91CE5655800972699 /* Main.storyboard in Resources */,
+				20ECC4171D001B4E002312FB /* Assets.xcassets in Resources */,
 				01E394F11CFFEF0600B81964 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

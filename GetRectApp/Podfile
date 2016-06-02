@@ -12,6 +12,7 @@ target 'GetRect' do
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
   pod 'Mapbox-iOS-SDK', '~> 3.2.2'
+  pod 'MapboxGeocoder.swift', :git => 'https://github.com/mapbox/MapboxGeocoder.swift.git', :tag => 'v0.5.0'
 
   target 'GetRectTests' do
     inherit! :search_paths
