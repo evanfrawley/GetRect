@@ -162,7 +162,6 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         
     }
 
-    
     @IBAction func next(sender: AnyObject) {
         api.next()
     }
