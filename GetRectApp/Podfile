@@ -11,6 +11,7 @@ target 'GetRect' do
   pod 'Firebase'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
+  pod 'Mapbox-iOS-SDK', '~> 3.2.2'
 
   target 'GetRectTests' do
     inherit! :search_paths

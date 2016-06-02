@@ -10,6 +10,7 @@ import UIKit
 import SwiftyJSON
 import Firebase
 import CoreLocation
+import Mapbox
 
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
@@ -34,9 +35,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestLocation()
+      
         
-        DB.sharedInstance.login("123456789")
-        DB.sharedInstance.newUser("123456789")
+       // DB.sharedInstance.login("123456789")
+        //DB.sharedInstance.newUser("123456789")
         
         
         
@@ -46,7 +48,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         // NEW POST: func newPost(song: String, loc: CLLocation) 
         
         // UPVOTE: func upvote(postID: String)
-        // DOWNVOTE: func downvote(postID: String)
+        // DOWNVOTE: func downvote(postID: String) postID = unqiueID
         
         // GET USER POSTS: func getUserPosts(completionHandler: (posts: [[String: String]]) -> ()) 
     }
