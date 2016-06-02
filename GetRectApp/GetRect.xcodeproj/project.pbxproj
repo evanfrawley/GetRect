@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01E394F11CFFEF0600B81964 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01E394F01CFFEF0600B81964 /* GoogleService-Info.plist */; };
+		01E394F21CFFEF0600B81964 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01E394F01CFFEF0600B81964 /* GoogleService-Info.plist */; };
+		01E394F31CFFEF0600B81964 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01E394F01CFFEF0600B81964 /* GoogleService-Info.plist */; };
+		01E394F51CFFEF2C00B81964 /* DB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E394F41CFFEF2C00B81964 /* DB.swift */; };
+		01E394F61CFFEF2C00B81964 /* DB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E394F41CFFEF2C00B81964 /* DB.swift */; };
+		01E394F71CFFEF2C00B81964 /* DB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E394F41CFFEF2C00B81964 /* DB.swift */; };
+		01E394F91CFFEF7500B81964 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01E394F81CFFEF7500B81964 /* CoreLocation.framework */; };
 		0382EFA7A81C9D7200CDB05F /* Pods_GetRectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 949CEB91BE431943BE252EAC /* Pods_GetRectTests.framework */; };
 		2010303F1CF1A8BF00E25635 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2010303B1CF1A8BF00E25635 /* FeedViewController.swift */; };
 		201030401CF1A8BF00E25635 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2010303C1CF1A8BF00E25635 /* PostViewController.swift */; };
@@ -23,7 +30,6 @@
 		43AAB4E57C3D698748E96A0F /* Pods_GetRect.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1550F9B89BCB1FC28FD79408 /* Pods_GetRect.framework */; };
 		9D5DFDE41CE5655800972699 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5DFDE31CE5655800972699 /* AppDelegate.swift */; };
 		9D5DFDE91CE5655800972699 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D5DFDE71CE5655800972699 /* Main.storyboard */; };
-		9D5DFDEB1CE5655800972699 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D5DFDEA1CE5655800972699 /* Assets.xcassets */; };
 		9D5DFDEE1CE5655800972699 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D5DFDEC1CE5655800972699 /* LaunchScreen.storyboard */; };
 		9D5DFDF91CE5655800972699 /* GetRectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5DFDF81CE5655800972699 /* GetRectTests.swift */; };
 		9D5DFE041CE5655800972699 /* GetRectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5DFE031CE5655800972699 /* GetRectUITests.swift */; };
@@ -49,6 +55,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01E394F01CFFEF0600B81964 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		01E394F41CFFEF2C00B81964 /* DB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DB.swift; sourceTree = "<group>"; };
+		01E394F81CFFEF7500B81964 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		1550F9B89BCB1FC28FD79408 /* Pods_GetRect.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GetRect.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F108B2567A2F1A0DDCE1A44 /* Pods-GetRect.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GetRect.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GetRect/Pods-GetRect.debug.xcconfig"; sourceTree = "<group>"; };
 		2010303B1CF1A8BF00E25635 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
@@ -73,7 +82,6 @@
 		9D5DFDE01CE5655800972699 /* GetRect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GetRect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D5DFDE31CE5655800972699 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9D5DFDE81CE5655800972699 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		9D5DFDEA1CE5655800972699 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D5DFDED1CE5655800972699 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D5DFDEF1CE5655800972699 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D5DFDF41CE5655800972699 /* GetRectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GetRectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,6 +100,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				20AEAEE61CFFEE230055FDE2 /* MapKit.framework in Frameworks */,
+				01E394F91CFFEF7500B81964 /* CoreLocation.framework in Frameworks */,
 				9D5DFE1A1CE5692800972699 /* AVFoundation.framework in Frameworks */,
 				209D61FE1CEF961600FDF372 /* Spotify.framework in Frameworks */,
 				43AAB4E57C3D698748E96A0F /* Pods_GetRect.framework in Frameworks */,
@@ -149,6 +158,7 @@
 				2010303D1CF1A8BF00E25635 /* SettingsViewController.swift */,
 				2010303E1CF1A8BF00E25635 /* ViewController.swift */,
 				20AEAEE91CFFEEFC0055FDE2 /* MapViewController.swift */,
+				01E394F41CFFEF2C00B81964 /* DB.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -202,7 +212,7 @@
 				209D62171CEFB95500FDF372 /* Controllers */,
 				209D61FD1CEF961600FDF372 /* Spotify.framework */,
 				9D5DFDE31CE5655800972699 /* AppDelegate.swift */,
-				9D5DFDEA1CE5655800972699 /* Assets.xcassets */,
+				01E394F01CFFEF0600B81964 /* GoogleService-Info.plist */,
 				9D5DFDEF1CE5655800972699 /* Info.plist */,
 				206E84B01CEF7AD600F6260D /* GetRect-Bridging-Header.h */,
 			);
@@ -231,6 +241,7 @@
 			isa = PBXGroup;
 			children = (
 				20AEAEE51CFFEE230055FDE2 /* MapKit.framework */,
+				01E394F81CFFEF7500B81964 /* CoreLocation.framework */,
 				1550F9B89BCB1FC28FD79408 /* Pods_GetRect.framework */,
 				949CEB91BE431943BE252EAC /* Pods_GetRectTests.framework */,
 				6882B7665E869A7F96D21278 /* Pods_GetRectUITests.framework */,
@@ -352,8 +363,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D5DFDEE1CE5655800972699 /* LaunchScreen.storyboard in Resources */,
-				9D5DFDEB1CE5655800972699 /* Assets.xcassets in Resources */,
 				9D5DFDE91CE5655800972699 /* Main.storyboard in Resources */,
+				01E394F11CFFEF0600B81964 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,6 +372,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01E394F21CFFEF0600B81964 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,6 +380,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01E394F31CFFEF0600B81964 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,6 +516,7 @@
 			files = (
 				20AEAEEA1CFFEEFC0055FDE2 /* MapViewController.swift in Sources */,
 				201030421CF1A8BF00E25635 /* ViewController.swift in Sources */,
+				01E394F51CFFEF2C00B81964 /* DB.swift in Sources */,
 				201030961CF2E5F400E25635 /* FeedTableCell.swift in Sources */,
 				201030401CF1A8BF00E25635 /* PostViewController.swift in Sources */,
 				20A75D771CF79C43004FC557 /* PostTableCell.swift in Sources */,
@@ -520,6 +534,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D5DFDF91CE5655800972699 /* GetRectTests.swift in Sources */,
+				01E394F61CFFEF2C00B81964 /* DB.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -528,6 +543,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D5DFE041CE5655800972699 /* GetRectUITests.swift in Sources */,
+				01E394F71CFFEF2C00B81964 /* DB.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -666,7 +682,10 @@
 				);
 				INFOPLIST_FILE = GetRect/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"$(inherited)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.evanfrawley.GetRect;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -690,7 +709,10 @@
 				);
 				INFOPLIST_FILE = GetRect/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"$(inherited)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.evanfrawley.GetRect;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
