@@ -71,7 +71,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         print("GETTING FEED")
         DB.sharedInstance.getFeed(locations.last!, radius: 1500) { (posts) in
             for post in posts {
-                print("URI: \(post["songURI"])")
+                print("URI: \(post["songURI"]!)")
             }
         }
     }
