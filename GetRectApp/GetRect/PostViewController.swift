@@ -13,6 +13,8 @@ import AddressBook
 
 class PostViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
+    let messageComposer = MessageComposer();
+    
     var placeholder :JSON = [
             ["uri": "spotify:track:4Y8XcGssM81dwtlbjkqfm5",
             "user": "evanfrawley",
@@ -100,7 +102,21 @@ class PostViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
         let send = UITableViewRowAction(style: .Normal, title: "Send") { action, index in
             print("send button tapped")
-            //call send function here
+            let alert = UIAlertController(title: "Error", message: "Can't send text", preferredStyle: .Alert)
+            let messageComposeVC = self.messageComposer.configuredMessageComposeViewController()
+            if (self.messageComposer.canSendText()) {
+                // Obtain a configured MFMessageComposeViewController
+                
+                
+                // Present the configured MFMessageComposeViewController instance
+                // Note that the dismissal of the VC will be handled by the messageComposer instance,
+                // since it implements the appropriate delegate call-back
+                self.presentViewController(messageComposeVC, animated: true, completion: nil)
+            } else {
+                // Let the user know if his/her device isn't able to send text messages
+                let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (_) in }
+                alert.addAction(cancelAction)
+            }            //call send function here
         }
         send.backgroundColor = UIColor.lightGrayColor()
         
