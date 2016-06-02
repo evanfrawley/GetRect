@@ -94,11 +94,8 @@
 		9D5DFE031CE5655800972699 /* GetRectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRectUITests.swift; sourceTree = "<group>"; };
 		9D5DFE051CE5655800972699 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D5DFE191CE5692800972699 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-<<<<<<< HEAD
 		E2FFFF631CFFB34200F02E15 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../Assets.xcassets; sourceTree = "<group>"; };
 		E2FFFF871D00321900F02E15 /* MessageComposer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageComposer.swift; sourceTree = "<group>"; };
-=======
->>>>>>> df6d76bcd0950fb49e989b399e560bc04164e98a
 		F77E4E334911EBC85D3BFF40 /* Pods-GetRect.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GetRect.release.xcconfig"; path = "Pods/Target Support Files/Pods-GetRect/Pods-GetRect.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
