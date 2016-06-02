@@ -208,6 +208,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Feed" id="CYJ-km-M1V"/>
                     <connections>
+                        <outlet property="scoreLabel" destination="Lfp-cU-in8" id="7uT-D0-sdN"/>
                         <outlet property="tableView" destination="uJe-3o-jWx" id="lVI-2i-Yct"/>
                     </connections>
                 </viewController>

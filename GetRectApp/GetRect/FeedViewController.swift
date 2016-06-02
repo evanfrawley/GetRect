@@ -18,6 +18,8 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     let api:SpotifyAPIHandler = SpotifyAPIHandler.init()
     var data:JSON = JSON([:])
     var postRef:PostViewController!
+    
+    @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var playButton: UIToolbar!
     @IBOutlet weak var tableView: UITableView!
     
