@@ -36,9 +36,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.requestLocation()
         
         DB.sharedInstance.login("123456789")
-        DB.sharedInstance.newUser("123456789")
-        
-        
+        //DB.sharedInstance.newUser("123456789")
         
         // LOGIN: func login(spotifyID: String)
         // NEW USER: func newUser(spotifyID: String)
@@ -48,11 +46,17 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         // UPVOTE: func upvote(postID: String)
         // DOWNVOTE: func downvote(postID: String)
         
-        // GET USER POSTS: func getUserPosts(completionHandler: (posts: [[String: String]]) -> ()) 
+        // GET USER POSTS: func getUserPosts(completionHandler: (posts: [[String: String]]) -> ())
+        /*DB.sharedInstance.getUserPosts() { (posts) in
+         for post in posts {
+         print("woohoo, \(post["postID"])")
+         }
+         }*/
     }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        print("\(locations.last!.coordinate.latitude), \(locations.last!.coordinate.longitude)")
+        //DB.sharedInstance.newPost("www.song.com", loc: locations.last!)
+        //print("\(locations.last!.coordinate.latitude), \(locations.last!.coordinate.longitude)")
     }
     
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {

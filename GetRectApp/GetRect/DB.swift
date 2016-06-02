@@ -45,27 +45,28 @@ class DB {
         }
     }
     
-    func newPost(song: String, loc: CLLocation) {
+    func newPost(songURI: String, loc: CLLocation) {
         let userID = FIRAuth.auth()?.currentUser?.uid
         ref.child("users").child(userID!).observeSingleEventOfType(.Value, withBlock: { (snapshot) in
-            self.newPostHelper(userID!, song: song, lat: "\(loc.coordinate.latitude)",
-                long: "\(loc.coordinate.longitude)", score: 0)
+            self.newPostHelper(userID!, songURI: songURI, lat: "\(loc.coordinate.latitude)",
+                long: "\(loc.coordinate.longitude)", time: "\(loc.timestamp.timeIntervalSince1970)", score: 0)
         }) { (error) in
             print("new post error")
         }
     }
     
-    private func newPostHelper(userID: String, song: String, lat: String, long: String, score: Int) {
+    private func newPostHelper(userID: String, songURI: String, lat: String, long: String, time: String, score: Int) {
         // Create new post at /user-posts/$userid/$postid and at
         // /posts/$postid simultaneously
         let key = ref.child("posts").childByAutoId().key
         let post = [
             "uid": userID,
-            "song": song,
+            "songURI": songURI,
             "location": [
                 "lat": lat,
                 "long": long
             ],
+            "time": time,
             "score": score
         ]
         
@@ -105,36 +106,36 @@ class DB {
         print("user id: \(userID)")
         ref.child("posts").queryOrderedByChild("uid").queryEqualToValue(userID).observeSingleEventOfType(.Value, withBlock: { snapshot in
             
+            //print(snapshot.)
+            
             var posts = [[String: String]]()
             
             for post in snapshot.children {
+                let postID = post.ref.key
                 let lat = post.value.objectForKey("location")!.objectForKey("lat")
                 let long = post.value.objectForKey("location")!.objectForKey("long")
-                let song = post.value!["song"] as! String
+                let time = post.value!["time"] as! String
+                let songURI = post.value!["songURI"] as! String
                 let score = post.value!["score"] as! Int
                 let uid = post.value!["uid"] as! String
                 
-                let post: [String: String] = [
+                let postRet: [String: String] = [
+                    "postID": postID,
                     "lat": "\(lat)",
                     "long": "\(long)",
-                    "song": song,
+                    "time": time,
+                    "songURI": songURI,
                     "score": "\(score)",
                     "uid": uid
                 ]
                 
-                posts.append(post)
+                posts.append(postRet)
             }
             
             completionHandler(posts: posts)
             
         }) { (error) in
             print("get user posts error")
-        }
-    }
-    
-    private func getUserPostsHelper(postArray: [[String: String]]) {
-        for post in postArray {
-            print("song=\(post["song"]), score=\(post["score"]), location=[\(post["lat"]), \(post["long"])], uid=\(post["uid"])")
         }
     }
 }
