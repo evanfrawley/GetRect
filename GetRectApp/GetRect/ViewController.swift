@@ -8,24 +8,60 @@
 
 import UIKit
 import SwiftyJSON
+import Firebase
+import CoreLocation
+import Mapbox
 
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController, CLLocationManagerDelegate {
+    
     let kClientID = "1a475789c4004e6584ad764a80430f52"
     let kCallbackURL = "getrect://callback"
     let kClientSecret = "114ba2547a2c47d39abe3bdc6dd662d6"
     
+    var locationManager: CLLocationManager!
     
     @IBOutlet weak var button: UIButton!
     var session:SPTSession!
     var player:SPTAudioStreamingController?
     let auth = SPTAuth.defaultInstance()
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.requestLocation()
+             
+        DB.sharedInstance.login("123456789")
+        //DB.sharedInstance.newUser("123456789")
+        
+        // LOGIN: func login(spotifyID: String)
+        // NEW USER: func newUser(spotifyID: String)
+        
+        // NEW POST: func newPost(song: String, loc: CLLocation)
+        
+        // UPVOTE: func upvote(postID: String)
+        // DOWNVOTE: func downvote(postID: String) postID = unqiueID
+        
+        // GET USER POSTS: func getUserPosts(completionHandler: (posts: [[String: String]]) -> ())
+        /*DB.sharedInstance.getUserPosts() { (posts) in
+         for post in posts {
+         print("woohoo, \(post["postID"])")
+         }
+         }*/
+    }
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        //DB.sharedInstance.newPost("www.song.com", loc: locations.last!)
+        //print("\(locations.last!.coordinate.latitude), \(locations.last!.coordinate.longitude)")
+    }
+    
+    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+        print("Error getting location")
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -68,7 +104,7 @@ class ViewController: UIViewController {
         let tbc :AnyObject! = self.storyboard?.instantiateViewControllerWithIdentifier("TabController")
         self.showViewController(tbc as! UITabBarController, sender: self)
     }
-
+    
     
     func playUsingSession(sessionObj:SPTSession!){
         

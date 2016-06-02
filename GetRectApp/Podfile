@@ -8,6 +8,11 @@ target 'GetRect' do
 
   pod 'SwiftyJSON', '~> 2.3'
   pod 'Alamofire', '~> 3.4'
+  pod 'Firebase'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Database'
+  pod 'Mapbox-iOS-SDK', '~> 3.2.2'
+
   target 'GetRectTests' do
     inherit! :search_paths
   end
