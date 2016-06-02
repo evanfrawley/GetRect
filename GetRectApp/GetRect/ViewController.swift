@@ -13,7 +13,7 @@ import CoreLocation
 
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
-
+    
     let kClientID = "1a475789c4004e6584ad764a80430f52"
     let kCallbackURL = "getrect://callback"
     let kClientSecret = "114ba2547a2c47d39abe3bdc6dd662d6"
@@ -24,7 +24,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     var session:SPTSession!
     var player:SPTAudioStreamingController?
     let auth = SPTAuth.defaultInstance()
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +41,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         // LOGIN: func login(spotifyID: String)
         // NEW USER: func newUser(spotifyID: String)
         
-        // NEW POST: func newPost(song: String, loc: CLLocation) 
+        // NEW POST: func newPost(song: String, loc: CLLocation)
         
         // UPVOTE: func upvote(postID: String)
         // DOWNVOTE: func downvote(postID: String)
@@ -103,7 +103,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         let tbc :AnyObject! = self.storyboard?.instantiateViewControllerWithIdentifier("TabController")
         self.showViewController(tbc as! UITabBarController, sender: self)
     }
-
+    
     
     func playUsingSession(sessionObj:SPTSession!){
         
