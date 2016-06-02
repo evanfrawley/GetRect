@@ -10,9 +10,14 @@ import UIKit
 
 class SettingsViewController: UIViewController  {
 
+    @IBOutlet weak var userScore: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        DB.sharedInstance.getUserScore { (totalScore) in
+            self.userScore.text = "\(totalScore)"
+        }
+        
         // Do any additional setup after loading the view.
     }
 

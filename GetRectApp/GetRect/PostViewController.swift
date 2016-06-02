@@ -102,8 +102,9 @@ class PostViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
         let send = UITableViewRowAction(style: .Normal, title: "Send") { action, index in
             print("send button tapped")
+            let href = self.data["tracks", "items", indexPath.row, "external_urls", "spotify"].stringValue
             let alert = UIAlertController(title: "Error", message: "Can't send text", preferredStyle: .Alert)
-            let messageComposeVC = self.messageComposer.configuredMessageComposeViewController()
+            let messageComposeVC = self.messageComposer.configuredMessageComposeViewController(href)
             if (self.messageComposer.canSendText()) {
                 // Obtain a configured MFMessageComposeViewController
                 
@@ -123,6 +124,9 @@ class PostViewController: UIViewController, UITableViewDelegate, UITableViewData
         let post = UITableViewRowAction(style: .Normal, title: "Post") { action, index in
             print("post button tapped")
             //call post function here
+            let uri = self.data["tracks", "items", indexPath.row, "uri"].stringValue
+            DB.sharedInstance.newPost(uri, loc: DB.sharedInstance.currentLocation)
+            
         }
         post.backgroundColor = UIColor.orangeColor()
         return [send, post]

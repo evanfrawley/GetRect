@@ -16,11 +16,15 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
     override func viewWillAppear(animated: Bool) {
         
         let post = storyboard?.instantiateViewControllerWithIdentifier("PostScene") as! PostViewController
+        post.tabBarItem.image = UIImage(named: "recommend")
         let feed = storyboard?.instantiateViewControllerWithIdentifier("FeedScene") as! FeedViewController
+        feed.tabBarItem.image = UIImage(named: "feed")
         let settings = storyboard?.instantiateViewControllerWithIdentifier("SettingsScene") as! SettingsViewController
+        settings.tabBarItem.image = UIImage(named: "settings")
         let map = storyboard?.instantiateViewControllerWithIdentifier("MapScene") as! MapViewController
-        
+        map.tabBarItem.image = UIImage(named: "map")
         let controllers = [feed, post, map, settings]
+        
         self.viewControllers = controllers
         
     }
