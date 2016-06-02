@@ -20,13 +20,13 @@
 		201030411CF1A8BF00E25635 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2010303D1CF1A8BF00E25635 /* SettingsViewController.swift */; };
 		201030421CF1A8BF00E25635 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2010303E1CF1A8BF00E25635 /* ViewController.swift */; };
 		201030961CF2E5F400E25635 /* FeedTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201030951CF2E5F400E25635 /* FeedTableCell.swift */; };
+		20478C5A1D00C896005B26BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20478C591D00C896005B26BA /* Assets.xcassets */; };
 		205450F01CF8FBDD003AF561 /* ResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205450EF1CF8FBDD003AF561 /* ResultsTableViewController.swift */; };
 		205451311CFD9292003AF561 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205451301CFD9292003AF561 /* TabBarViewController.swift */; };
 		209D61FE1CEF961600FDF372 /* Spotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 209D61FD1CEF961600FDF372 /* Spotify.framework */; };
 		20A75D771CF79C43004FC557 /* PostTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A75D761CF79C43004FC557 /* PostTableCell.swift */; };
 		20A75D791CF79E78004FC557 /* SpotifyAPIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A75D781CF79E78004FC557 /* SpotifyAPIHandler.swift */; };
 		20AEAEEA1CFFEEFC0055FDE2 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AEAEE91CFFEEFC0055FDE2 /* MapViewController.swift */; };
-		20ECC4171D001B4E002312FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20ECC4161D001B4E002312FB /* Assets.xcassets */; };
 		43AAB4E57C3D698748E96A0F /* Pods_GetRect.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1550F9B89BCB1FC28FD79408 /* Pods_GetRect.framework */; };
 		9D5DFDE41CE5655800972699 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5DFDE31CE5655800972699 /* AppDelegate.swift */; };
 		9D5DFDE91CE5655800972699 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D5DFDE71CE5655800972699 /* Main.storyboard */; };
@@ -34,7 +34,6 @@
 		9D5DFDF91CE5655800972699 /* GetRectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5DFDF81CE5655800972699 /* GetRectTests.swift */; };
 		9D5DFE041CE5655800972699 /* GetRectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5DFE031CE5655800972699 /* GetRectUITests.swift */; };
 		9D5DFE1A1CE5692800972699 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D5DFE191CE5692800972699 /* AVFoundation.framework */; };
-		E2FFFF641CFFB34200F02E15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2FFFF631CFFB34200F02E15 /* Assets.xcassets */; };
 		E2FFFF881D00321900F02E15 /* MessageComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FFFF871D00321900F02E15 /* MessageComposer.swift */; };
 		ECCAE690E638014C6CCC04A2 /* Pods_GetRectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6882B7665E869A7F96D21278 /* Pods_GetRectUITests.framework */; };
 /* End PBXBuildFile section */
@@ -67,6 +66,7 @@
 		2010303D1CF1A8BF00E25635 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		2010303E1CF1A8BF00E25635 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		201030951CF2E5F400E25635 /* FeedTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTableCell.swift; sourceTree = "<group>"; };
+		20478C591D00C896005B26BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		205450EF1CF8FBDD003AF561 /* ResultsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsTableViewController.swift; sourceTree = "<group>"; };
 		205451301CFD9292003AF561 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		206E84B01CEF7AD600F6260D /* GetRect-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GetRect-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -75,7 +75,6 @@
 		20A75D781CF79E78004FC557 /* SpotifyAPIHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotifyAPIHandler.swift; sourceTree = "<group>"; };
 		20AEAEE51CFFEE230055FDE2 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		20AEAEE91CFFEEFC0055FDE2 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		20ECC4161D001B4E002312FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../Assets.xcassets; sourceTree = "<group>"; };
 		303542804B0C2DB0C87FF9F8 /* Pods-GetRectUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GetRectUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GetRectUITests/Pods-GetRectUITests.release.xcconfig"; sourceTree = "<group>"; };
 		35D65DB19C85236A5513C8BB /* Pods-GetRectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GetRectTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GetRectTests/Pods-GetRectTests.debug.xcconfig"; sourceTree = "<group>"; };
 		492698DFFEDF09BEE5BACD29 /* Pods-GetRectUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GetRectUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GetRectUITests/Pods-GetRectUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -94,7 +93,6 @@
 		9D5DFE031CE5655800972699 /* GetRectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRectUITests.swift; sourceTree = "<group>"; };
 		9D5DFE051CE5655800972699 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D5DFE191CE5692800972699 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		E2FFFF631CFFB34200F02E15 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../Assets.xcassets; sourceTree = "<group>"; };
 		E2FFFF871D00321900F02E15 /* MessageComposer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageComposer.swift; sourceTree = "<group>"; };
 		F77E4E334911EBC85D3BFF40 /* Pods-GetRect.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GetRect.release.xcconfig"; path = "Pods/Target Support Files/Pods-GetRect/Pods-GetRect.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -211,7 +209,7 @@
 		9D5DFDE21CE5655800972699 /* GetRect */ = {
 			isa = PBXGroup;
 			children = (
-				20ECC4161D001B4E002312FB /* Assets.xcassets */,
+				20478C591D00C896005B26BA /* Assets.xcassets */,
 				20A75D7A1CF79E7D004FC557 /* Models */,
 				201030941CF2E5AB00E25635 /* Views */,
 				209D62181CEFB97200FDF372 /* Storyboards */,
@@ -370,7 +368,7 @@
 			files = (
 				9D5DFDEE1CE5655800972699 /* LaunchScreen.storyboard in Resources */,
 				9D5DFDE91CE5655800972699 /* Main.storyboard in Resources */,
-				20ECC4171D001B4E002312FB /* Assets.xcassets in Resources */,
+				20478C5A1D00C896005B26BA /* Assets.xcassets in Resources */,
 				01E394F11CFFEF0600B81964 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -679,7 +677,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1F108B2567A2F1A0DDCE1A44 /* Pods-GetRect.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -706,7 +705,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F77E4E334911EBC85D3BFF40 /* Pods-GetRect.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
