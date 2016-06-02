@@ -7,7 +7,7 @@
 //  Copyright © 2016 iGuest. All rights reserved.
 //
 
-
+import UIKit
 import Foundation
 import Firebase
 import CoreLocation
@@ -17,7 +17,7 @@ class DB {
     var ref: FIRDatabaseReference!
     var feedRad: Int
     var feedLocation: CLLocationCoordinate2D
-    
+
     init() {
         self.ref = FIRDatabase.database().reference()
         self.feedRad = 0
@@ -106,10 +106,7 @@ class DB {
     
     func getUserPosts(completionHandler: (posts: [[String: String]]) -> ()) {
         let userID = FIRAuth.auth()?.currentUser?.uid
-        print("user id: \(userID)")
         ref.child("posts").queryOrderedByChild("uid").queryEqualToValue(userID).observeSingleEventOfType(.Value, withBlock: { snapshot in
-            
-            //print(snapshot.)
             
             var posts = [[String: String]]()
             
@@ -142,9 +139,70 @@ class DB {
         }
     }
     
+
     func updateFromMap(rad:Int, loc:CLLocationCoordinate2D) {
         self.feedRad = rad //meters
         self.feedLocation = loc
+    }
+    
+    func getUserScore(callback: (totalScore: Int) -> ()) {
+        let userID = FIRAuth.auth()?.currentUser?.uid
+        ref.child("posts").queryOrderedByChild("uid").queryEqualToValue(userID).observeSingleEventOfType(.Value, withBlock: { snapshot in
+            
+            var total = 0
+            
+            for post in snapshot.children {
+                total += post.value!["score"] as! Int
+            }
+            
+            callback(totalScore: total)
+            
+        }) { (error) in
+            print("get user posts error")
+        }
+    }
+    
+    func getFeed(location: CLLocation, radius: Int, completionHandler: (posts: [[String: String]]) -> ()) {
+        // 1 mile = 1609.34 m
+        
+        ref.child("posts").observeSingleEventOfType(.Value, withBlock: { snapshot in
+            
+            var validPosts = [[String: String]]()
+            
+            for post in snapshot.children {
+                let lat = Double(post.value.objectForKey("location")!.objectForKey("lat") as! String)
+                let long = Double(post.value.objectForKey("location")!.objectForKey("long") as! String)
+                
+                let newLoc = CLLocation(latitude: lat!, longitude: long!)
+                
+                if location.distanceFromLocation(newLoc) < (Double(radius) * 1609.34) {
+                    let postID = post.ref.key
+                    let lat = post.value.objectForKey("location")!.objectForKey("lat")
+                    let long = post.value.objectForKey("location")!.objectForKey("long")
+                    let time = post.value!["time"] as! String
+                    let songURI = post.value!["songURI"] as! String
+                    let score = post.value!["score"] as! Int
+                    let uid = post.value!["uid"] as! String
+                    
+                    let validPost: [String: String] = [
+                        "postID": postID,
+                        "lat": "\(lat)",
+                        "long": "\(long)",
+                        "time": time,
+                        "songURI": songURI,
+                        "score": "\(score)",
+                        "uid": uid
+                    ]
+                    
+                    validPosts.append(validPost)
+                }
+            }
+            
+            completionHandler(posts: validPosts)
+            
+        }) { (error) in
+            print("get user posts error")
+        }
     }
 }
 

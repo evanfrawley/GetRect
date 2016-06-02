@@ -34,6 +34,8 @@
 		9D5DFDF91CE5655800972699 /* GetRectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5DFDF81CE5655800972699 /* GetRectTests.swift */; };
 		9D5DFE041CE5655800972699 /* GetRectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5DFE031CE5655800972699 /* GetRectUITests.swift */; };
 		9D5DFE1A1CE5692800972699 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D5DFE191CE5692800972699 /* AVFoundation.framework */; };
+		E2FFFF641CFFB34200F02E15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2FFFF631CFFB34200F02E15 /* Assets.xcassets */; };
+		E2FFFF881D00321900F02E15 /* MessageComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FFFF871D00321900F02E15 /* MessageComposer.swift */; };
 		ECCAE690E638014C6CCC04A2 /* Pods_GetRectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6882B7665E869A7F96D21278 /* Pods_GetRectUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -92,6 +94,11 @@
 		9D5DFE031CE5655800972699 /* GetRectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRectUITests.swift; sourceTree = "<group>"; };
 		9D5DFE051CE5655800972699 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D5DFE191CE5692800972699 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+<<<<<<< HEAD
+		E2FFFF631CFFB34200F02E15 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../Assets.xcassets; sourceTree = "<group>"; };
+		E2FFFF871D00321900F02E15 /* MessageComposer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageComposer.swift; sourceTree = "<group>"; };
+=======
+>>>>>>> df6d76bcd0950fb49e989b399e560bc04164e98a
 		F77E4E334911EBC85D3BFF40 /* Pods-GetRect.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GetRect.release.xcconfig"; path = "Pods/Target Support Files/Pods-GetRect/Pods-GetRect.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -175,6 +182,7 @@
 		20A75D7A1CF79E7D004FC557 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E2FFFF871D00321900F02E15 /* MessageComposer.swift */,
 				20A75D781CF79E78004FC557 /* SpotifyAPIHandler.swift */,
 			);
 			name = Models;
@@ -528,6 +536,7 @@
 				20A75D791CF79E78004FC557 /* SpotifyAPIHandler.swift in Sources */,
 				205451311CFD9292003AF561 /* TabBarViewController.swift in Sources */,
 				201030411CF1A8BF00E25635 /* SettingsViewController.swift in Sources */,
+				E2FFFF881D00321900F02E15 /* MessageComposer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
