@@ -39,6 +39,18 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         DB.sharedInstance.login("123456789")
         //DB.sharedInstance.newUser("123456789")
         
+        /*for state in states {
+            let newURI = "www.\(state["State"]!).com"
+            let newLoc = CLLocation(latitude: state["Latitude"] as! CLLocationDegrees, longitude: state["Longitude"] as! CLLocationDegrees)
+            DB.sharedInstance.newPost(newURI, loc: newLoc)
+        }*/
+        
+        
+        // GET TOTAL USER SCORE
+        /*DB.sharedInstance.getUserScore { (totalScore) in
+            print("total score: \(totalScore)")
+        }*/
+        
         // LOGIN: func login(spotifyID: String)
         // NEW USER: func newUser(spotifyID: String)
         
@@ -56,14 +68,18 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        //DB.sharedInstance.newPost("www.song.com", loc: locations.last!)
-        //print("\(locations.last!.coordinate.latitude), \(locations.last!.coordinate.longitude)")
+        print("GETTING FEED")
+        DB.sharedInstance.getFeed(locations.last!, radius: 1500) { (posts) in
+            for post in posts {
+                print("URI: \(post["songURI"]!)")
+            }
+        }
     }
-    
+
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
         print("Error getting location")
     }
-    
+
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         self.auth.clientID = kClientID
