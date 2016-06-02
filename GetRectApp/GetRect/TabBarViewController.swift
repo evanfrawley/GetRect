@@ -18,8 +18,9 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
         let post = storyboard?.instantiateViewControllerWithIdentifier("PostScene") as! PostViewController
         let feed = storyboard?.instantiateViewControllerWithIdentifier("FeedScene") as! FeedViewController
         let settings = storyboard?.instantiateViewControllerWithIdentifier("SettingsScene") as! SettingsViewController
+        let map = storyboard?.instantiateViewControllerWithIdentifier("MapScene") as! MapViewController
         
-        let controllers = [feed, post, settings]
+        let controllers = [feed, post, map, settings]
         self.viewControllers = controllers
         
     }

@@ -40,6 +40,40 @@
             </objects>
             <point key="canvasLocation" x="336" y="426"/>
         </scene>
+        <!--Map-->
+        <scene sceneID="Wpg-1m-Ehq">
+            <objects>
+                <viewController storyboardIdentifier="MapScene" title="Map" id="aAf-9P-eDS" customClass="MapViewController" customModule="GetRect" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Zqf-LR-7N2"/>
+                        <viewControllerLayoutGuide type="bottom" id="SfP-Lb-jXn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XSh-1H-wnz">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="eqa-r9-DPA">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="eqa-r9-DPA" secondAttribute="trailing" constant="-20" id="FbU-pT-iuT"/>
+                            <constraint firstItem="eqa-r9-DPA" firstAttribute="top" secondItem="XSh-1H-wnz" secondAttribute="topMargin" id="TXt-RR-irI"/>
+                            <constraint firstItem="eqa-r9-DPA" firstAttribute="leading" secondItem="XSh-1H-wnz" secondAttribute="leadingMargin" constant="-20" id="X9G-Qw-xAQ"/>
+                            <constraint firstItem="SfP-Lb-jXn" firstAttribute="top" secondItem="eqa-r9-DPA" secondAttribute="bottom" id="lD2-F5-ax7"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="bb5-hC-mG8"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="mapView" destination="eqa-r9-DPA" id="GxL-qr-TQN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vaa-Qr-nx7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="326" y="1125"/>
+        </scene>
         <!--Feed-->
         <scene sceneID="3ME-uB-feR">
             <objects>
@@ -311,6 +345,9 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
+                    <connections>
+                        <segue destination="aAf-9P-eDS" kind="relationship" relationship="viewControllers" id="z14-mW-6yM"/>
+                    </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HcJ-Xr-I0p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
