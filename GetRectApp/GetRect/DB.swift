@@ -10,6 +10,7 @@
 import Foundation
 import Firebase
 import CoreLocation
+import SwiftyJSON
 
 class DB {
     
@@ -105,22 +106,21 @@ class DB {
         }
     }
     
-    func getUserPosts() {
+    func getUserPosts(completionHandler: (posts: [[String: String]]) -> ()) {
         let userID = FIRAuth.auth()?.currentUser?.uid
         print("user id: \(userID)")
         ref.child("posts").queryOrderedByChild("uid").queryEqualToValue(userID).observeSingleEventOfType(.Value, withBlock: { snapshot in
             
-            //var posts = [[String: String]]()
+            var posts = [[String: String]]()
             
             for post in snapshot.children {
-                print(post.value.objectForKey("location"))
-                /*let lat = post.value!["location"].child("lat")
-                let long = post.value!["location"]!!.value!["lat"]
+                let lat = post.value.objectForKey("location")!.objectForKey("lat")
+                let long = post.value.objectForKey("location")!.objectForKey("long")
                 let song = post.value!["song"] as! String
                 let score = post.value!["score"] as! Int
                 let uid = post.value!["uid"] as! String
                 
-                var post: [String: String] = [
+                let post: [String: String] = [
                     "lat": "\(lat)",
                     "long": "\(long)",
                     "song": song,
@@ -128,11 +128,11 @@ class DB {
                     "uid": uid
                 ]
                 
-                posts.append(post)*/
+                posts.append(post)
             }
             
-            //self.getUserPostsHelper(posts)
-            
+            completionHandler(posts: posts)
+                        
         }) { (error) in
             print("get user posts error")
         }
@@ -140,7 +140,7 @@ class DB {
     
     private func getUserPostsHelper(postArray: [[String: String]]) {
         for post in postArray {
-            print("song=\(post["song"]), score=\(post["score"]), location=[\("lat"), \("long")], uid=\("uid")")
+            print("song=\(post["song"]), score=\(post["score"]), location=[\(post["lat"]), \(post["long"])], uid=\(post["uid"])")
         }
     }
 }

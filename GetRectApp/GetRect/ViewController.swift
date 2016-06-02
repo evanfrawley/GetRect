@@ -43,7 +43,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestLocation()
         
-        DB.sharedInstance.getUserPosts()
+        // GET USER POSTS:
+        //DB.sharedInstance.getUserPosts() { (posts) in
+        //    for post in posts {
+        //        print(post["song"])
+        //    }
+        //}
         
         // LOGIN: DB.sharedInstance.login("123456789") [spotify user id]
         // SIGNUP: DB.sharedInstance.newUser("123456789") [spotify user id]
