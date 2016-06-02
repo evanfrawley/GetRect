@@ -168,6 +168,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBAction func playPauseButton(sender: AnyObject) {
         api.pausePlay()
+        
     }
 
     

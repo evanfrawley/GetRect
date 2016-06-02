@@ -1,9 +1,9 @@
 {
   "name": "MapboxGeocoder.swift",
-  "version": "0.5.0",
-  "summary": "Mapbox Geocoding API for Swift and Objective-C.",
-  "description": "MapboxGeocoder.swift makes it easy to connect your iOS, OS X, tvOS, or watchOS application to the Mapbox Geocoding API. MapboxGeocoder.swift exposes the power of the Carmen geocoder through a simple API similar to Core Location’s CLGeocoder.",
-  "homepage": "https://www.mapbox.com/geocoding/",
+  "version": "0.4.0",
+  "summary": "Mapbox Geocoding API wrapper for Objective-C and Swift.",
+  "description": "MapboxGeocoder.swift makes it easy to connect your iOS or OS X application to the Mapbox Geocoding API. MapboxGeocoder.swift combines the power of the Carmen geocoder with the simplicity of Core Location’s CLGeocoder API.",
+  "homepage": "https://www.mapbox.com/api-documentation/#geocoding",
   "license": {
     "type": "ISC",
     "file": "LICENSE.md"
@@ -20,9 +20,14 @@
   },
   "source": {
     "git": "https://github.com/mapbox/MapboxGeocoder.swift.git",
-    "tag": "v0.5.0"
+    "tag": "v0.4.0"
   },
   "source_files": "MapboxGeocoder",
   "requires_arc": true,
-  "module_name": "MapboxGeocoder"
+  "module_name": "MapboxGeocoder",
+  "dependencies": {
+    "NBNRequestKit": [
+
+    ]
+  }
 }

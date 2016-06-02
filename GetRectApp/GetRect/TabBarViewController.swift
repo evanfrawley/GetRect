@@ -11,7 +11,7 @@ import UIKit
 class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
 
     var player:SPTAudioStreamingController!
-    
+    var test:String = "hi"
     
     override func viewWillAppear(animated: Bool) {
         

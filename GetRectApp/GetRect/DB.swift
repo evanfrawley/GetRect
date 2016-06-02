@@ -15,10 +15,13 @@ import CoreLocation
 class DB {
     
     var ref: FIRDatabaseReference!
-    
+    var feedRad: Int
+    var feedLocation: CLLocationCoordinate2D
     
     init() {
         self.ref = FIRDatabase.database().reference()
+        self.feedRad = 0
+        self.feedLocation = CLLocationCoordinate2D()
     }
     
     static let sharedInstance = DB()
@@ -137,6 +140,11 @@ class DB {
         }) { (error) in
             print("get user posts error")
         }
+    }
+    
+    func updateFromMap(rad:Int, loc:CLLocationCoordinate2D) {
+        self.feedRad = rad //meters
+        self.feedLocation = loc
     }
 }
 
