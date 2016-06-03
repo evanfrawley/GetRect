@@ -95,6 +95,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.title?.text = post["name"].stringValue
         cell.artist?.text = post["artists", 0, "name"].stringValue
         cell.uri = post["uri"].stringValue
+        cell.score.text = placeholder[indexPath.row]["score"]!
         if post["album", "images", 0, "url"].stringValue != "" {
             let imgURL:NSURL = NSURL(string: post["album", "images", 2, "url"].stringValue)!
             let imgData:NSData? = NSData(contentsOfURL: imgURL)
@@ -127,11 +128,13 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
         let like = UITableViewRowAction(style: .Normal, title: "👍") { action, index in
             print("like button tapped")
+            DB.sharedInstance.upvote(self.placeholder[indexPath.row]["postID"]!)
         }
         like.backgroundColor = UIColor.greenColor()
         
         let dislike = UITableViewRowAction(style: .Normal, title: "👎") { action, index in
             print("dislike button tapped")
+            DB.sharedInstance.downvote(self.placeholder[indexPath.row]["postID"]!)
         }
         dislike.backgroundColor = UIColor.redColor()
         

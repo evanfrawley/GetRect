@@ -135,12 +135,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lfp-cU-in8">
-                                                    <rect key="frame" x="8" y="8" width="66" height="64"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KAG-C0-9x4">
                                                     <rect key="frame" x="82" y="8" width="64" height="64"/>
                                                     <constraints>
@@ -163,6 +157,12 @@
                                                         <constraint firstAttribute="height" constant="24" id="nQW-hN-QWK"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lfp-cU-in8">
+                                                    <rect key="frame" x="8" y="8" width="66" height="64"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -208,7 +208,6 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Feed" id="CYJ-km-M1V"/>
                     <connections>
-                        <outlet property="scoreLabel" destination="Lfp-cU-in8" id="7uT-D0-sdN"/>
                         <outlet property="tableView" destination="uJe-3o-jWx" id="lVI-2i-Yct"/>
                     </connections>
                 </viewController>

@@ -38,12 +38,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.updateAfterLogin), name: "successfulLogin", object: nil)
         
         let userDefaults = NSUserDefaults.standardUserDefaults()
+        print("1")
         
         if let sessionObj:AnyObject = userDefaults.objectForKey("SpotifySession") {
+             print("2")
             let sessionDataObj = sessionObj as! NSData
             session = NSKeyedUnarchiver.unarchiveObjectWithData(sessionDataObj) as! SPTSession
             print(session.isValid())
             if session.isValid() {
+                 print("3")
                 self.button.hidden = true
                 self.updateAfterLogin()
             } else {
@@ -84,7 +87,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     func updateAfterLogin() {
         let userDefaults = NSUserDefaults.standardUserDefaults()
-        
+         print("5")
         if let sessionObj:AnyObject = userDefaults.objectForKey("SpotifySession") {
             let sessionDataObj = sessionObj as! NSData
             session = NSKeyedUnarchiver.unarchiveObjectWithData(sessionDataObj) as! SPTSession
@@ -94,7 +97,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                 login("")
             }
         }
-        
+   print("6")
         print("should go to tab controller")
         let tbc :AnyObject! = self.storyboard?.instantiateViewControllerWithIdentifier("TabController")
         self.showViewController(tbc as! UITabBarController, sender: self)
