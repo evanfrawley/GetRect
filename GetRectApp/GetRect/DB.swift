@@ -145,7 +145,7 @@ class DB {
 
     func updateFromMap(rad:Int, loc:CLLocationCoordinate2D) {
         self.feedRad = rad //meters
-        self.feedLocation = loc
+        self.currentLocation = CLLocation(latitude: loc.latitude, longitude: loc.longitude)
     }
     
     func getUserScore(callback: (totalScore: Int) -> ()) {

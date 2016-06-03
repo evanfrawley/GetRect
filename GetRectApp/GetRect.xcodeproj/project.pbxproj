@@ -329,7 +329,7 @@
 				TargetAttributes = {
 					9D5DFDDF1CE5655800972699 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = S4A2CDSF6D;
+						DevelopmentTeam = 5HDK7J6LY2;
 					};
 					9D5DFDF31CE5655800972699 = {
 						CreatedOnToolsVersion = 7.3;
@@ -693,7 +693,7 @@
 					"-ObjC",
 					"$(inherited)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = me.evanfrawley.GetRect;
+				PRODUCT_BUNDLE_IDENTIFIER = me.evanfrawley.GetRect1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "GetRect/GetRect-Bridging-Header.h";
@@ -721,7 +721,7 @@
 					"-ObjC",
 					"$(inherited)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = me.evanfrawley.GetRect;
+				PRODUCT_BUNDLE_IDENTIFIER = me.evanfrawley.GetRect1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "GetRect/GetRect-Bridging-Header.h";

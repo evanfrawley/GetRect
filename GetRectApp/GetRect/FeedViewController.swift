@@ -54,6 +54,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func refresh(sender:AnyObject) {
         DB.sharedInstance.refreshFeed = true
+        loadFeed()
         self.rc?.endRefreshing()
     }
     
@@ -64,6 +65,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
             isFirstLocationUpdate = false
             return
         } else {
+            locationManager.stopUpdatingLocation()
             //print("[\(locations.last!.coordinate.latitude), \(locations.last!.coordinate.longitude)]")
             DB.sharedInstance.currentLocation = locations.last!
             if DB.sharedInstance.refreshFeed! {

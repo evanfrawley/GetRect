@@ -34,27 +34,30 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         self.auth.redirectURL = NSURL(string: kCallbackURL)
         self.auth.sessionUserDefaultsKey = "SpotifySession"
         self.auth.requestedScopes = [SPTAuthStreamingScope]
-        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.updateAfterLogin), name: "successfulLogin", object: nil)
         
-        let userDefaults = NSUserDefaults.standardUserDefaults()
+
+               let userDefaults = NSUserDefaults.standardUserDefaults()
         print("1")
         
         if let sessionObj:AnyObject = userDefaults.objectForKey("SpotifySession") {
-             print("2")
+            print("2")
             let sessionDataObj = sessionObj as! NSData
-            session = NSKeyedUnarchiver.unarchiveObjectWithData(sessionDataObj) as! SPTSession
-            print(session.isValid())
-            if session.isValid() {
-                 print("3")
+            
+            let session1 = NSKeyedUnarchiver.unarchiveObjectWithData(sessionDataObj) as! SPTSession
+            print(session1.isValid())
+            if session1.isValid() {
+                print("3")
                 self.button.hidden = true
                 self.updateAfterLogin()
             } else {
                 login("")
+                
             }
         } else {
             self.button.hidden = false
         }
+        
     }
     
     func firebaseAuth(session: SPTSession!) {
