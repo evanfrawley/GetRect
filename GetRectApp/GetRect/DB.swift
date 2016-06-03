@@ -167,7 +167,7 @@ class DB {
     
     func getFeed(location: CLLocation, radius: Int, completionHandler: (posts: [[String: String]]) -> ()) {
         
-        ref.child("posts").observeSingleEventOfType(.Value, withBlock: { snapshot in
+        ref.child("posts").queryOrderedByChild("score").observeSingleEventOfType(.Value, withBlock: { snapshot in
             
             var validPosts = [[String: String]]()
             
@@ -200,6 +200,7 @@ class DB {
                 }
             }
             
+            validPosts = validPosts.reverse()
             completionHandler(posts: validPosts)
             
         }) { (error) in
