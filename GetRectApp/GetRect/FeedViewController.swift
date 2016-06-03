@@ -29,7 +29,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     //placeholder for the inteded firebase JSON data
     var placeholder :[[String: String]] = [[String: String]]()
-    
+    var rc:UIRefreshControl!
     //initializer viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +45,18 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.tableView.dataSource = self
         
         postRef = self.tabBarController?.viewControllers![1] as! PostViewController
+        rc = UIRefreshControl()
+        rc.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        rc.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+        self.tableView.addSubview(rc)
+        
     }
+    
+    func refresh(sender:AnyObject) {
+        DB.sharedInstance.refreshFeed = true
+        self.rc?.endRefreshing()
+    }
+    
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if isFirstLocationUpdate! {
@@ -79,11 +90,10 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
         }
     }
+
     
-    override func viewWillAppear(animated: Bool) {
-        
-    }
     
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
